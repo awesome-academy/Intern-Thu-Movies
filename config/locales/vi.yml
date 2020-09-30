@@ -1,2 +1,26 @@
 vi:
-  title: "Website xem phim "
+  layouts:
+    application:
+      title: "Website xem phim online"
+    header:
+      logo: "OnlineMovies"
+      movies: "Phim"
+      popular: "Phổ biến"
+      toprated: "Top"
+      genre: "Thể loại"
+      action: "Hành động"
+      animation: "Hoạt hình"
+      people: "Diễn viên"
+      popular_people: "Diễn viên nổi tiếng"
+      more: "Xem thêm"
+      login: "Đăng nhập"
+      signup: "Đăng ký"
+  movies:
+    index:
+      welcome: "Chào mừng !"
+      introduce: "Hàng triệu bộ phim, chương trình truyền hình. Khám phá ngay."
+      popular: "Phổ biến"
+      trailers: "Trailers mới nhất"
+      trending: "Thịnh hành"
+      search: "Tìm kiếm"
+      search_movies: "Tìm kiếm phim ..."

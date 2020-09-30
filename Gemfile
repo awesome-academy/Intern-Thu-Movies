@@ -5,8 +5,13 @@ ruby "2.7.1"
 
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.2", require: false
+gem "font-awesome-rails"
+gem "jquery-rails"
+gem "bootstrap", "~> 4.0"
+gem "sass-rails", ">= 6"
 gem "config"
 gem "jbuilder", "~> 2.7"
+gem "kaminari"
 gem "mysql2"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"

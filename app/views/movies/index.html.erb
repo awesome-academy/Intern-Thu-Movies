@@ -1,0 +1,40 @@
+<div class="container-fluid big-search">
+  <div class="search-box">
+    <div>
+      <h2 class="text-white font-weight-bold"><%= t ".welcome" %></h2>
+      <h3 class="text-white font-weight-bold"><%= t ".introduce" %></h3>
+    </div>
+    <br>
+    <%= form_tag "#", method: "path", class:"search-form form row" do %>
+      <label>
+        <%= search_field_tag :movie, nil, class: "search-field", placeholder: t(".search_movies") %>
+      </label>
+      <%= submit_tag t(".search"),class: "search-submit button" %>
+    <% end %>
+    <br>
+  </div>
+</div>
+<br>
+<br>
+<div class="container-fluid content">
+  <h4><b><%= t ".popular" %></b></h4>
+  <div class="row flex-nowrap">
+    <%= render @movies %>
+  </div>
+</div>
+<br>
+
+<!--Trailer-->
+<div class="container-fluid trailer">
+  <h4 class="text-white title-trailer"><b><%= t ".trailers" %></b></h4>
+  <div class="row flex-nowrap content-trailer">
+    <%= render partial: "trailer", collection: @movies, as: :movie %>
+  </div>
+</div>
+<br>
+<div class="container-fluid content">
+  <h4><b><%= t ".trending" %></b></h4>
+  <div class="row flex-nowrap">
+    <%= render @movies %>
+  </div>
+</div>
