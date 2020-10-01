@@ -1,0 +1,17 @@
+<div class="col-3 list_movie">
+  <%= link_to "", data: {toggle: "modal", target: "#"+movie.slug } do %>
+    <%= image_tag movie.image_url, class: "card-img-top fa fa-play-circle" %>
+    <div class="play"><i class="fa fa-play" aria-hidden="true"></i></div>
+    <br>
+    <h5 class="card-title text-white text-center"><b><%= movie.title %></b></h5>
+  <% end %>
+  <br>
+</div>
+<div class="modal fade" id="<%= movie.slug %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-dialog-centered">
+      <iframe id="glassAnimalsVideo" src="<%= movie.trailer %>" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-md row d-flex justify-content-end">
+  <div class="col-1">
+    <div class="logo">
+      <%= link_to t(".logo"), "#", class: "font-weight-bold" %>
+    </div>
+  </div>
+
+  <div class="collapse navbar-collapse col-7" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+     <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link font-weight-bold",
+            data: {toggle: "dropdown"} do %>
+            <span><%= t ".movies" %> </span>
+        <% end %>
+        <div class="dropdown-menu">
+          <%= link_to t(".popular"), "#", class: "dropdown-item" %>
+          <%= link_to t(".toprated"), "#", class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link font-weight-bold",
+            data: {toggle: "dropdown"} do %>
+            <span><%= t ".genre" %></span>
+        <% end %>
+        <div class="dropdown-menu">
+          <%= link_to t(".action"), "#", class: "dropdown-item" %>
+          <%= link_to t(".animation"), "#", class: "dropdown-item" %>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link font-weight-bold",
+            data: {toggle: "dropdown"} do %>
+          <span><%= t ".people" %> </span>
+        <% end %>
+        <div class="dropdown-menu">
+          <%= link_to t(".popular_people"), "#", class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <%= link_to "#", class: "nav-link font-weight-bold",
+            data: {toggle: "dropdown"} do %>
+          <span><%= t ".more" %></span>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="col-4 d-flex justify-content-end login">
+    <%= link_to locale: :vi do %>
+      <%= image_tag "flag_vn.jpg" %>
+    <% end %>
+    &nbsp;
+    <%= link_to locale: :en do %>
+      <%= image_tag "flag_uk.png" %>
+    <% end %>
+    <%= link_to t(".login"), "#", class: "nav-link font-weight-bold" %>
+    <%= link_to t(".signup"), "#", class: "nav-link font-weight-bold" %>
+  </div>
+</nav>

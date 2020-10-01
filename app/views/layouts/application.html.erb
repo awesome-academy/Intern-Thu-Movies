@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title><%= t ".title"%> </title>
+    <title><%= t ".title" %> </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <h1><%= t ".title" %> </h1>
-    <%= link_to t(".en"), locale: :en %>
-    <%= link_to t(".vi"), locale: :vi %>
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
+
 </html>

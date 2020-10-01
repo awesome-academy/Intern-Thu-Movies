@@ -1,2 +1,26 @@
 en:
-  title: "Movie Website"
+  layouts:
+    application:
+       title: "Movies Website"
+    header:
+      logo: "OnlineMovies"
+      movies: "Movies"
+      popular: "Popular"
+      toprated: "Top Rated"
+      genre: "Genre"
+      action: "Action"
+      animation: "Animation"
+      people: "People"
+      popular_people: "Popular People"
+      more: "More"
+      login: "Login"
+      signup: "Sign up"
+  movies:
+    index:
+      welcome: "Welecome !"
+      introduce: "Millions of movies, TV shows and people to discover. Explore now."
+      popular: "Popular"
+      trailers: "Lastest Trailers"
+      trending: "Trending"
+      search: "Search"
+      search_movies: "Search movies..."
