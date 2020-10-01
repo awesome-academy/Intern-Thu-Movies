@@ -24,3 +24,8 @@ en:
       trending: "Trending"
       search: "Search"
       search_movies: "Search movies..."
+    show:
+      overview: "Overview"
+      director: "Director"
+      top-casts: "Top Billed Cast"
+      recommendations: "Recommendations"

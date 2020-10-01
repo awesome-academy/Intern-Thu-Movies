@@ -7,3 +7,6 @@ user:
   password:
     minimum: 6
   movies: 2
+movie:
+  birthday: "%F"
+  date: "%Y"

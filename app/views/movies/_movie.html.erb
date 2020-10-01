@@ -1,5 +1,5 @@
 <div class="col-2 list_movie">
-  <%= link_to "#" do %>
+  <%= link_to movie_path slug: movie.slug do %>
   <div class="card card-block">
     <%= image_tag movie.image_url, class: "card-img-top" %>
     <div class="card-body">

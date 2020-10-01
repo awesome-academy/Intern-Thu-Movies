@@ -1,0 +1,13 @@
+<div class="col-2 list_movie">
+  <%= link_to "" do %>
+    <div class="card card-block">
+      <%= image_tag cast.avatar, class: "card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title text-dark"><b><%= cast.cast_name %></b></h5>
+        <p class="card-text text-secondary">
+          <%= cast.birthday.strftime Settings.movie.birthday %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
