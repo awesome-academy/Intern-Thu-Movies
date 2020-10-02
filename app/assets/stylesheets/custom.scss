@@ -243,3 +243,71 @@ input.search-submit {
   color: $black;
   outline: 0;
 }
+
+/*Detail movie*/
+.background_preview {
+  height: 510px;
+  min-width: 100%;
+  background-image: url("/assets/tran.png");
+  background-size: cover;
+}
+
+#image_singlemovie {
+  height: 450px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.content_img {
+  height: 510px;
+  min-width: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(14.12%, 14.51%, 16.86%, 1) 150px,
+    rgba(22.35%, 22.35%, 22.35%, 0.84) 100%
+  );
+}
+
+.content_text .title a {
+  color: $white;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.content_text .title span {
+  color: $white;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+#social a {
+  display: inline-block;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 2px solid $white;
+  border-radius: 50%;
+  box-shadow: 0 3px 3px $color_hover;
+  padding: 0px;
+  text-decoration: none;
+  text-align: center;
+  color: $white;
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 27px;
+  -moz-border-radius: 27px;
+  -webkit-border-radius: 27px;
+}
+
+.header_info h4 {
+  color: $white;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.header_info #director {
+  color: $white;
+  font-size: 20px;
+  font-weight: 900;
+}

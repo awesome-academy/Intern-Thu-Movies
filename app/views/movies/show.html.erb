@@ -1,0 +1,44 @@
+<br>
+<br>
+<div class="background_preview" >
+  <div class="row content_img">
+    <div class="col-4 d-flex justify-content-center align-items-center">
+       <%= image_tag @movie.image_url, id: "image_singlemovie" %>
+    </div>
+    <div class="col-8 content_text">
+      <br>
+      <div class="title">
+        <%= link_to @movie.title, "#" %>
+        <span>(<%= @movie.release_date.strftime Settings.movie.date %>)</span>
+      </div>
+      <div class="facts">
+        <span><%= @movie.release_date %> - </span>
+        <span><%= @movie.genre.genre_name %> - </span>
+        <span><%= @movie.runtime %></span>
+      </div>
+      <br>
+      <%= render "social" %>
+      <br>
+      <div class="header_info">
+        <h4><%= t ".overview" %></h4>
+        <p><%= @movie.overview %></p>
+        <p id="director"><%= t ".director" %></p>
+        <span><%= @movie.director %></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid content">
+  <h4><b><%= t ".top-casts" %></b> </h4>
+  <div class="row flex-nowrap">
+    <%= render partial: "cast", collection: @movie.casts, as: :cast %>
+  </div>
+</div>
+<br>
+<div class="container-fluid content">
+  <h4><b><%= t ".recommendations" %></b> </h4>
+  <div class="row flex-nowrap">
+    <%= render partial: "movie", collection: @recommend.movies, as: :movie %>
+  </div>
+</div>
+<br>
