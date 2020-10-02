@@ -1,5 +1,7 @@
 vi:
   layouts:
+    admin:
+      title: "Website xem phim"
     application:
       title: "Website xem phim online"
     header:
@@ -29,3 +31,17 @@ vi:
       director: "Đạo diễn"
       top-casts: "Diễn viên"
       recommendations: "Đề xuất"
+  admin:
+    header:
+      home: "Trang chủ"
+      contact: "Liên hệ"
+    sidebar:
+      admin: "Admin"
+      name: "Thu"
+      manage-movies: "Quản lý phim"
+      manage-users: "Quản lý người dùng"
+    footer:
+      version: "Version 3.0.5"
+      copyright: "Copyright"
+      year: "2014-2019"
+      admin: "AdminLTE.io"

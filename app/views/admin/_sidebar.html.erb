@@ -1,0 +1,38 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <%= link_to "#", class: "brand-link" do %>
+    <%= image_tag "logo.png", class: "brand-image img-circle elevation-3" %>
+    <span class="brand-text font-weight-light"><%= t ".admin" %> </span>
+  <% end %>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <%= image_tag "logo.png", class: "brand-image img-circle elevation-3" %>
+      </div>
+      <div class="info">
+        <%= link_to t(".name"),"#" %>
+      </div>
+    </div>
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item has-treeview menu-open">
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link" do %>
+                <p><%= t ".manage-movies" %></p>
+              <% end %>
+            </li>
+          </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link" do %>
+                <p><%= t ".manage-users" %></p>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
