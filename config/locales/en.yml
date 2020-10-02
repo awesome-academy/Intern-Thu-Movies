@@ -1,7 +1,9 @@
 en:
   layouts:
+    admin:
+      title: "Movies Website"
     application:
-       title: "Movies Website"
+      title: "Movies Website"
     header:
       logo: "OnlineMovies"
       movies: "Movies"
@@ -29,3 +31,17 @@ en:
       director: "Director"
       top-casts: "Top Billed Cast"
       recommendations: "Recommendations"
+  admin:
+    header:
+      home: "Home"
+      contact: "Contact"
+    sidebar:
+      admin: "Admin"
+      name: "Thu"
+      manage-movies: "Manage Movies"
+      manage-users: "Manage Users"
+    footer:
+      version: "Version 3.0.5"
+      copyright: "Copyright"
+      year: "2014-2019"
+      admin: "AdminLTE.io"
