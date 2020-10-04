@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-md row d-flex justify-content-end">
   <div class="col-1">
     <div class="logo">
-      <%= link_to t(".logo"), "#", class: "font-weight-bold" %>
+      <%= link_to t(".logo"), root_path, class: "font-weight-bold" %>
     </div>
   </div>
 
-  <div class="collapse navbar-collapse col-7" id="navbarsExampleDefault">
+  <div class="collapse navbar-collapse col-6" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-     <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <%= link_to "#", class: "nav-link font-weight-bold",
             data: {toggle: "dropdown"} do %>
-            <span><%= t ".movies" %> </span>
+          <span><%= t ".movies" %> </span>
         <% end %>
         <div class="dropdown-menu">
           <%= link_to t(".popular"), "#", class: "dropdown-item" %>
@@ -20,7 +20,7 @@
       <li class="nav-item dropdown">
         <%= link_to "#", class: "nav-link font-weight-bold",
             data: {toggle: "dropdown"} do %>
-            <span><%= t ".genre" %></span>
+          <span><%= t ".genre" %></span>
         <% end %>
         <div class="dropdown-menu">
           <%= link_to t(".action"), "#", class: "dropdown-item" %>
@@ -46,8 +46,7 @@
     </ul>
   </div>
 
-
-  <div class="col-4 d-flex justify-content-end login">
+  <div class="col-3 d-flex justify-content-end login">
     <%= link_to locale: :vi do %>
       <%= image_tag "flag_vn.jpg" %>
     <% end %>
@@ -55,7 +54,26 @@
     <%= link_to locale: :en do %>
       <%= image_tag "flag_uk.png" %>
     <% end %>
-    <%= link_to t(".login"), "#", class: "nav-link font-weight-bold" %>
-    <%= link_to t(".signup"), "#", class: "nav-link font-weight-bold" %>
+   </div>
+
+  <div class="col-2 d-flex justify-content-start login">
+    <% if logged_in? %>
+      <ul>
+        <li class="nav-item dropdown">
+          <%= link_to "#", class: "nav-link font-weight-bold", data: {toggle: "dropdown"} do %>
+            <%= image_tag "logo.png" %>
+          <% end %>
+          <div class="dropdown-menu">
+            <%= link_to t(".profile"), "#", class: "dropdown-item" %>
+            <%= link_to t(".favorite-movies"), "#", class: "dropdown-item" %>
+            <%= link_to t(".watch-later"), "#", class: "dropdown-item" %>
+            <%= link_to t(".logout"), logout_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    <% else %>
+      <%= link_to t(".login"), login_path, class: "nav-link font-weight-bold" %>
+      <%= link_to t(".signup"), new_users_path, class: "nav-link font-weight-bold" %>
+    <% end %>
   </div>
 </nav>

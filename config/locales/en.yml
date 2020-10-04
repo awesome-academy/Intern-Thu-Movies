@@ -17,6 +17,10 @@ en:
       more: "More"
       login: "Login"
       signup: "Sign up"
+      profile: "Profile"
+      favorite-movies: "Favorite Movies"
+      watch-later: "Watch Later"
+      logout: "Logout"
   movies:
     index:
       welcome: "Welecome !"
@@ -45,3 +49,20 @@ en:
       copyright: "Copyright"
       year: "2014-2019"
       admin: "AdminLTE.io"
+  shared:
+    redirect:
+      home: "Home"
+    error_mesages:
+      error: "Error"
+      error_contains: "The form contains"
+  sessions:
+    new:
+      login: "Login"
+      sign_up_now: "Sign up now"
+    create:
+      error: "Error"
+  users:
+    new:
+      signup: "Sign Up"
+      welcome: "Welcome to the Website Movies !"
+      error: "Error"

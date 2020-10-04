@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = Settings.user.email.regex
+  USER_PERMIT = %i(name email password password_confirmation).freeze
   has_many :favoriate_movies, dependent: :destroy
   has_many :movies, through: :favoriate_movies
 

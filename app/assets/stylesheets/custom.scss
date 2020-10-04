@@ -71,6 +71,37 @@ nav .login a img {
   height: 25px;
 }
 
+nav .login ul li a img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+#back a{
+  color: $text-search;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    color: #025376;
+  }
+}
+/*Form sign up*/
+
+.form-sign-up{
+  border: 2px solid $search-color;
+  padding: 20px;
+}
+/*Form login*/
+.form-login{
+  margin: 40px 0 200px 0;
+}
+.control-label-required::after {
+  color: $red;
+  content: ' *';
+}
+
+
 /*List movie*/
 .content {
   max-width: 90%;

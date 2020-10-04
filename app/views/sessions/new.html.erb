@@ -1,0 +1,26 @@
+<%= render "shared/redirect" %>
+<span id="back">
+  <%= link_to t(".login"), new_users_path %>
+</span>
+
+<div class="container form-login">
+  <div class="row d-flex justify-content-center ">
+    <div class="col-5 form-sign-up">
+      <h4 class="text-center"><b><%= t ".login" %></b></h4>
+      <%= form_for :session, url: login_path do |f| %>
+        <%= f.label :email, class: "control-label-required" %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label :password, class: "control-label-required" %>
+        <%= f.password_field :password, class: "form-control" %>
+
+        <br>
+        <div class="text-center text-bold">
+          <%= f.submit "Log in", class: "btn btn-info font-weight-bold" %>
+          <%= link_to t(".sign_up_now"), new_users_path %>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>

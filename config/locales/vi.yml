@@ -17,6 +17,10 @@ vi:
       more: "Xem thêm"
       login: "Đăng nhập"
       signup: "Đăng ký"
+      profile: "Thông tin tài khoản"
+      favorite-movies: "Phim yêu thích"
+      watch-later: "Xem sau"
+      logout: "Đăng xuất"
   movies:
     index:
       welcome: "Chào mừng !"
@@ -45,3 +49,20 @@ vi:
       copyright: "Copyright"
       year: "2014-2019"
       admin: "AdminLTE.io"
+  shared:
+    redirect:
+      home: "Trang chủ"
+    error_mesages:
+      error: "Lỗi"
+      error_contains: "Form chứa lỗi"
+  sessions:
+    new:
+      login: "Đăng nhập"
+      sign_up_now: "Đăng ký ngay"
+    create:
+      error: "Lỗi"
+  users:
+    new:
+      signup: "Đăng ký"
+      welcome: "Chào mừng đến với Website Movies !"
+      error: "Lỗi"
