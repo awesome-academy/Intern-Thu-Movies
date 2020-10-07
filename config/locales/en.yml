@@ -1,7 +1,7 @@
 en:
   layouts:
     admin:
-      title: "Movies Website"
+      title: "Movie Website"
     application:
       title: "Movies Website"
     header:
@@ -35,20 +35,6 @@ en:
       director: "Director"
       top-casts: "Top Billed Cast"
       recommendations: "Recommendations"
-  admin:
-    header:
-      home: "Home"
-      contact: "Contact"
-    sidebar:
-      admin: "Admin"
-      name: "Thu"
-      manage-movies: "Manage Movies"
-      manage-users: "Manage Users"
-    footer:
-      version: "Version 3.0.5"
-      copyright: "Copyright"
-      year: "2014-2019"
-      admin: "AdminLTE.io"
   shared:
     redirect:
       home: "Home"
@@ -66,3 +52,56 @@ en:
       signup: "Sign Up"
       welcome: "Welcome to the Website Movies !"
       error: "Error"
+  admin:
+    movies:
+      form:
+        cancel: "Cancel"
+        save: "Save"
+      movie:
+        sure: "Are you sure?"
+      index:
+        header: "Manage Movie"
+        add: "Add"
+        title: "Title"
+        image: "Image"
+        slug: "Slug"
+        overview: "Overview"
+        genre: "Genre"
+        runtime: "Runtime"
+        director: "Director"
+        release_date: "Release date"
+        action: "Action"
+        manage_movie: "Manage movie"
+      new:
+        create_new: "Create new movie"
+    layouts:
+      movies:
+        read:
+          title: "title"
+          image: "Image"
+          slug: "Slug"
+          overview: "Overview"
+          genre: "Genre"
+          runtime: "Runtime"
+          director: "Director"
+          release_date: "Release date"
+          action: "Action"
+          background_image: "Background Image"
+          movie: "Movie"
+          close: "Close"
+          trailer: "Trailer"
+          detail_movie: "Detail Movie"
+      header:
+        home: "Home"
+        contact: "Contact"
+      sidebar:
+        home: "Home"
+        admin: "Admin"
+        name: "Thu"
+        manage-movies: "Manage Movies"
+        manage-users: "Manage Users"
+      footer:
+        version: "Version 3.0.5"
+        copyright: "Copyright"
+        year: "2014-2019"
+        admin: "AdminLTE.io"

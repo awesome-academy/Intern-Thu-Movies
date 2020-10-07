@@ -49,3 +49,4 @@ spec/models/
 spec/requests/
 spec/views
 app/assets/images
+/public

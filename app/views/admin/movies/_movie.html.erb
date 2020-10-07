@@ -1,0 +1,30 @@
+<tr>
+  <td class="counterCell" scope="row"></td>
+  <td><%= movie.title %></td>
+  <td class="text-truncate" id="img-film">
+    <%= image_tag movie.image_url.to_s, id:"movie_img" %>
+  </td>
+  <td><%= movie.slug %></td>
+  <td class="text-truncate" id="truncate"><%= movie.overview %></td>
+  <td class="text-truncate" id="truncate"><%= movie.genre_name %></td>
+  <td><%= movie.runtime %></td>
+  <td><%= movie.director %></td>
+  <td><%= movie.release_date.strftime Settings.movie.day %></td>
+  <td id="action">
+    <%= link_to "", data: {toggle: "modal", target: "#"+movie.slug} do %>
+      <%= fa_icon "eye", id:"eye" %>
+    <% end %>
+    &nbsp;
+    &nbsp;
+    <%= link_to "movies/#{movie.id}/edit" do %>
+      <%= fa_icon "pencil-square-o", id:"pencil" %>
+    <% end %>
+    &nbsp;
+    &nbsp;
+    <%= link_to admin_movie_path(movie), method: :delete, data: { confirm: t(".sure") } do %>
+      <%= fa_icon "trash", id:"trash" %>
+    <% end %>
+
+    <%= render "admin/layouts/movies/read", movie: movie %>
+  </td>
+</tr>

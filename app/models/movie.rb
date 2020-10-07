@@ -1,4 +1,7 @@
 class Movie < ApplicationRecord
+  MOVIE_PERMIT = [:title, :image, :trailer, :background, :slug, :film,
+                  :overview, :trailer, :release_date,
+                  :runtime, :director, :genre_id].freeze
   belongs_to :genre
 
   has_many :comments, dependent: :destroy
@@ -8,4 +11,16 @@ class Movie < ApplicationRecord
 
   has_many :cast_movies, dependent: :destroy
   has_many :casts, through: :cast_movies
+
+  validates :title, presence: true, length: {maximum: Settings.movie.title}
+  validates :slug, presence: true, length: {maximum: Settings.movie.slug}
+  validates :trailer, presence: true
+  validates :overview, length: {maximum: Settings.movie.overview}
+  validates :runtime, presence: true
+
+  mount_uploader :image, ImageUploader
+  mount_uploader :film, FilmUploader
+  mount_uploader :background, BackgroundUploader
+
+  delegate :genre_name, to: :genre
 end

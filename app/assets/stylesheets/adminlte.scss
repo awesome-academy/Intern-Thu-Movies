@@ -1,3 +1,5 @@
+@import 'bootstrap';
+@import 'font-awesome';
 
 :root {
   --blue: #007bff;
@@ -42,14 +44,17 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 .flag a img{
   height: 30px;
   width: 40px;
 }
+
 .flag .logo-img{
   position: absolute;
   right: 15px;
 }
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
@@ -64,6 +69,80 @@ body {
   text-align: left;
   background-color: #ffffff;
 }
+/*custom*/
+#action a #eye{
+  color:black;
+  font-size: 25px;
+}
+
+#action a #pencil{
+  font-size: 25px;
+}
+
+#action a #trash{
+  color:red;
+  font-size: 25px;
+}
+
+#truncate{
+  max-width: 80px;
+}
+
+.control-label-required::after {
+  color: $red;
+  content: ' *';
+}
+
+#modal-read{
+  width: 700px;
+  height: auto;
+}
+
+#img-read{
+  height: 180px;
+  width:100px;
+}
+
+#img-background{
+  height: 180px;
+  width:300px;
+}
+
+#trailer{
+  width: 480px;
+  height: 180px;
+}
+
+#film{
+  height:200px;
+}
+
+table {
+  counter-reset: rowNumber -1;
+}
+
+table tr {
+  counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+  content: counter(rowNumber);
+}
+
+#stt{
+  width:5%;
+}
+
+#movie_img{
+  height: 50px;
+  width: 40px;
+}
+
+#img-film{
+  width: 6%;
+}
+/*end custom*/
+
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
