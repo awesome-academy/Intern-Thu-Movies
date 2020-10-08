@@ -35,6 +35,13 @@ vi:
       director: "Đạo diễn"
       top-casts: "Diễn viên"
       recommendations: "Đề xuất"
+      play_trailer: "Xem trailer"
+      play_movie: "Xem phim"
+    watch:
+      please_login: "Hãy đăng nhập trước"
+      not_found: "Không tìm thấy phim"
+    comment:
+      title: "Bình luận"
   shared:
     redirect:
       home: "Trang chủ"

@@ -105,11 +105,17 @@ nav .login ul li a img{
 /*List movie*/
 .content {
   max-width: 90%;
+  .list_movie a {
+    text-decoration: none;
+
+  }
 }
 
 .card-block {
   min-height: 300px;
+
 }
+
 
 .flex-nowrap {
   overflow-x: auto;
@@ -332,14 +338,49 @@ input.search-submit {
   -webkit-border-radius: 27px;
 }
 
-.header_info h4 {
+.header_info {
+  h4 {
   color: $white;
   font-size: 30px;
   font-weight: 900;
+  }
+  p{
+    color: $white;
+    max-width:800px
+  }
+  span{
+    color: $white;
+  }
+}
+
+.facts{
+  color: $white;
 }
 
 .header_info #director {
   color: $white;
   font-size: 20px;
   font-weight: 900;
+}
+
+/*Movie page*/
+#watch{
+  margin-top: 40px;
+
+  #watch-film{
+    height: 500px;
+  }
+}
+
+#comment{
+  margin-top: 40px;
+}
+
+.card-inner{
+  margin-left: 4rem;
+}
+
+.img-comment{
+  height:50px;
+  width:50px;
 }

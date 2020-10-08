@@ -1,0 +1,42 @@
+<div class="container" id="comment">
+  <h3><%= t ".title" %> </h3>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-1">
+          <%= image_tag "", class:"rounded-circle img-comment" %>
+          <p class="text-secondary text-center"></p>
+        </div>
+        <div class="col-md-10">
+          <p><strong></strong></p>
+          <p></p>
+          <p>
+            <%= link_to "#", class:"float-right btn btn-outline-info ml-2" do %>
+              <%= fa_icon "reply" %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <br>
+      <div class="card card-inner">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-1">
+              <%= image_tag "", class:"rounded-circle img-comment" %>
+              <p class="text-secondary text-center"></p>
+            </div>
+            <div class="col-9">
+              <p><strong></strong></p>
+              <p></p>
+              <p>
+                <%= link_to "#", class:"float-right btn btn-outline-info ml-2" do %>
+                  <%= fa_icon "reply" %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
