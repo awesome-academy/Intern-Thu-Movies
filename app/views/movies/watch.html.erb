@@ -1,0 +1,6 @@
+<div class="container" id="watch">
+  <div class="row">
+    <%= video_tag @movie.film_url.to_s, controls: true, id: "watch-film" %>
+  </div>
+</div>
+<%= render "comment" %>

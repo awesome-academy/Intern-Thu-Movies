@@ -35,6 +35,13 @@ en:
       director: "Director"
       top-casts: "Top Billed Cast"
       recommendations: "Recommendations"
+      play_trailer: "Play trailer"
+      play_movie: "Play movie"
+    watch:
+      please_login: "Please log in."
+      not_found: "Not found movie"
+    comment:
+      title: "Comment"
   shared:
     redirect:
       home: "Home"

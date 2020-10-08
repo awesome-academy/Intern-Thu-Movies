@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "movies#index"
     get "/movies/:slug", to: "movies#show", as: :movie
+    get "/movies/watch/:slug", to: "movies#watch", as: :watch
 
     resource :users
     get "/login", to: "sessions#new", as: :login

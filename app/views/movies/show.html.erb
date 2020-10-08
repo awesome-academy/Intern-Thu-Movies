@@ -9,7 +9,7 @@
       <br>
       <div class="title">
         <%= link_to @movie.title, "#" %>
-        <span>(<%= @movie.release_date.strftime Settings.movie.date %>)</span>
+        <span >(<%= @movie.release_date.strftime Settings.movie.date %>)</span>
       </div>
       <div class="facts">
         <span><%= @movie.release_date %> - </span>
@@ -25,6 +25,11 @@
         <p id="director"><%= t ".director" %></p>
         <span><%= @movie.director %></span>
       </div>
+      <br>
+      <div>
+        <%= link_to t(".play_trailer"), "", data: {toggle: "modal", target: "#"+@movie.slug }, class:"btn btn-light" %>
+        <%= link_to t(".play_movie"), watch_path, class:"btn btn-info"%>
+      </div>
     </div>
   </div>
 </div>
@@ -36,9 +41,18 @@
 </div>
 <br>
 <div class="container-fluid content">
-  <h4><b><%= t ".recommendations" %></b> </h4>
+  <h4><b><%= t ".recommendations" %></b></h4>
   <div class="row flex-nowrap">
     <%= render partial: "movie", collection: @recommend.movies, as: :movie %>
   </div>
 </div>
 <br>
+
+<div class="modal fade" id="<%= @movie.slug %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-dialog-centered">
+      <iframe id="glassAnimalsVideo" src="<%= @movie.trailer %>" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

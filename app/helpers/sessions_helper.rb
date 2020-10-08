@@ -15,4 +15,11 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
   end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = t ".please_login"
+      redirect_to login_path
+    end
+  end
 end
