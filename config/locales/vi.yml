@@ -35,20 +35,6 @@ vi:
       director: "Đạo diễn"
       top-casts: "Diễn viên"
       recommendations: "Đề xuất"
-  admin:
-    header:
-      home: "Trang chủ"
-      contact: "Liên hệ"
-    sidebar:
-      admin: "Admin"
-      name: "Thu"
-      manage-movies: "Quản lý phim"
-      manage-users: "Quản lý người dùng"
-    footer:
-      version: "Version 3.0.5"
-      copyright: "Copyright"
-      year: "2014-2019"
-      admin: "AdminLTE.io"
   shared:
     redirect:
       home: "Trang chủ"
@@ -66,3 +52,56 @@ vi:
       signup: "Đăng ký"
       welcome: "Chào mừng đến với Website Movies !"
       error: "Lỗi"
+  admin:
+    movies:
+      form:
+        cancel: "Thoát"
+        save: "Lưu"
+      movie:
+        sure: "Bạn đã chắc chắn?"
+      index:
+        header: "Quản lý phim"
+        add: "Thêm"
+        title: "Tiêu đe"
+        image: "Ảnh"
+        slug: "Slug"
+        overview: "Giới thiệu"
+        genre: "Thể loại"
+        runtime: "Thời lượng"
+        director: "Đạo diễn"
+        release_date: "Ngày phát hành"
+        action: ""
+        manage_movie: "Quản lý phim"
+      new:
+        create_new: "Tạo phim mới"
+    layouts:
+      movies:
+        read:
+          title: "Tiêu đề"
+          image: "Ảnh"
+          slug: "Slug"
+          overview: "Giới thiệu"
+          genre: "Thể loại"
+          runtime: "Thời lượng"
+          director: "Đạo diễn"
+          release_date: "ngày phát hành"
+          action: "Action"
+          background_image: "Ảnh nền"
+          movie: "Movie"
+          close: "Close"
+          trailer: "Trailer"
+          detail_movie: "Chi tiết phim"
+      header:
+        home: "Trang chủ"
+        contact: "Liên hệ"
+      sidebar:
+        home: "Trang chủ"
+        admin: "Admin"
+        name: "Thu"
+        manage-movies: "Quản lý phim"
+        manage-users: "Quản lý người dùng"
+      footer:
+        version: "Phiên bản 3.0.5"
+        copyright: "Copyright"
+        year: "2014-2019"
+        admin: "AdminLTE.io"

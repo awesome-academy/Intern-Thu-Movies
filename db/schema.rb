@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_03_145148) do
+ActiveRecord::Schema.define(version: 2020_10_06_032512) do
 
   create_table "cast_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
@@ -58,11 +58,11 @@ ActiveRecord::Schema.define(version: 2020_10_03_145148) do
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
-    t.string "image_url"
-    t.string "background_image"
+    t.string "image"
+    t.string "background"
     t.string "slug"
     t.text "overview"
-    t.string "source_movie"
+    t.string "film"
     t.string "trailer"
     t.date "release_date"
     t.string "runtime"

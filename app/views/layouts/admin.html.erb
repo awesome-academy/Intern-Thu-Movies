@@ -12,10 +12,13 @@
 
   <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" >
     <div class="wrapper">
-      <%= render "admin/header"%>
-      <%= render "admin/sidebar"%>
+      <%= render "admin/layouts/header"%>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= render "admin/layouts/sidebar"%>
       <%= yield %>
-      <%= render "admin/footer"%>
+      <%= render "admin/layouts/footer"%>
     </div>
   </body>
 

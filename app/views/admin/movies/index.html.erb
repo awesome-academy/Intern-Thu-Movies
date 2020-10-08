@@ -1,0 +1,39 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="row card-header">
+            <div class="card-title col-11">
+              <h3><%= t ".header" %></h3>
+            </div>
+            <div class="col-1">
+              <%= link_to t(".add"), new_admin_movie_path, class: "btn btn-info" %>
+            </div>
+          </div>
+          <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th id="stt">#</th>
+                  <th><%= t ".title" %></th>
+                  <th><%= t ".image" %></th>
+                  <th><%= t ".slug" %></th>
+                  <th><%= t ".overview" %></th>
+                  <th><%= t ".genre" %></th>
+                  <th><%= t ".runtime" %></th>
+                  <th><%= t ".director" %></th>
+                  <th><%= t ".release_date" %></th>
+                  <th><%= t ".action" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render @movies %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<%= form_for [:admin, @movie] do |f| %>
+  <%= render "admin/shared/error_messages" %>
+  <%= f.label :title, class:"control-label-required" %>
+  <%= f.text_field :title, placeholder: "4", class: "form-control "%>
+
+  <%= f.label :slug, class:"control-label-required" %>
+  <%= f.text_field :slug, class: "form-control" %>
+
+  <%= f.label :overview %>
+  <%= f.text_area :overview, class: "form-control", rows:"4" %>
+
+  <%= f.label :genre, class:"control-label-required" %>
+  <%= f.select :genre_id, options_for_select(@genre.collect{|g| [g.genre_name, g.id]}),{},{ class:"form-control" } %>
+
+  <%= f.label :runtime, class:"control-label-required" %>
+  <%= f.text_field :runtime, class: "form-control" %>
+
+  <%= f.label :director, class:"control-label-required" %>
+  <%= f.text_field :director, class: "form-control" %>
+
+  <%= f.label :trailer, class:"control-label-required" %>
+  <%= f.text_field :trailer, class: "form-control" %>
+
+  <%= f.label :release_date %>
+  <%= f.text_field :release_date, type:"date", class: "form-control" %>
+
+  <%= f.label :image, class:"control-label-required" %>
+  <%= f.file_field :image, class: "form-control-file"%>
+
+  <%= f.label :background_image %>
+  <%= f.file_field :background, class: "form-control-file" %>
+
+  <%= f.label :movie, class:"control-label-required" %>
+  <%= f.file_field :film, class: "form-control-file" %>
+  <br>
+  <div class="text-center text-bold">
+    <%= link_to t(".cancel"), admin_movies_path, class: "btn btn-secondary" %>
+    <%= f.submit t(".save"), class: "btn btn-success font-weight-bold" %>
+  </div>
+<% end %>
