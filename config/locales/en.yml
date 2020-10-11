@@ -60,6 +60,10 @@ en:
       welcome: "Welcome to the Website Movies !"
       error: "Error"
   admin:
+    shared:
+      error_messages:
+        error: "Error"
+        error_contains: "The from contains"
     movies:
       form:
         cancel: "Cancel"
@@ -112,3 +116,19 @@ en:
         copyright: "Copyright"
         year: "2014-2019"
         admin: "AdminLTE.io"
+  comments:
+    destroy:
+      cmt_success: "Delete success"
+    create:
+      error: "Error"
+      not_found: "Not found"
+    comment:
+      comment: "Comment"
+      placeholder: "Write your comment"
+      delete: "Delete"
+      sure: "Are you sure?"
+    form:
+      comment: "Comment"
+      placeholder: "Write your comment"
+    child-comment:
+      sure: "Are you sure?"

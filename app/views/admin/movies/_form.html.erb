@@ -1,7 +1,7 @@
 <%= form_for [:admin, @movie] do |f| %>
   <%= render "admin/shared/error_messages" %>
   <%= f.label :title, class:"control-label-required" %>
-  <%= f.text_field :title, placeholder: "4", class: "form-control "%>
+  <%= f.text_field :title, class: "form-control "%>
 
   <%= f.label :slug, class:"control-label-required" %>
   <%= f.text_field :slug, class: "form-control" %>
@@ -10,7 +10,8 @@
   <%= f.text_area :overview, class: "form-control", rows:"4" %>
 
   <%= f.label :genre, class:"control-label-required" %>
-  <%= f.select :genre_id, options_for_select(@genre.collect{|g| [g.genre_name, g.id]}),{},{ class:"form-control" } %>
+
+  <%= f.select :genre_id, options_from_collection_for_select(Genre.all, "id", "genre_name",  @movie.genre_id), {}, {class: "form-control"} %>
 
   <%= f.label :runtime, class:"control-label-required" %>
   <%= f.text_field :runtime, class: "form-control" %>

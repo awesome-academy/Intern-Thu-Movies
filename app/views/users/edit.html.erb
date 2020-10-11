@@ -1,0 +1,10 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name, class:"control-label-required" %>
+  <%= f.text_field :title, placeholder: "4", class: "form-control "%>
+  <%= f.file_field :avatar, class: "form-control-file"%>
+  <br>
+  <div class="text-center text-bold">
+    <%= link_to t(".cancel"), "", class: "btn btn-secondary" %>
+    <%= f.submit t(".save"), class: "btn btn-success font-weight-bold" %>
+  </div>
+<% end %>

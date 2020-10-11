@@ -60,6 +60,10 @@ vi:
       welcome: "Chào mừng đến với Website Movies !"
       error: "Lỗi"
   admin:
+    shared:
+      error_messages:
+        error: "Lỗi"
+        error_contains: "From có"
     movies:
       form:
         cancel: "Thoát"
@@ -112,3 +116,19 @@ vi:
         copyright: "Copyright"
         year: "2014-2019"
         admin: "AdminLTE.io"
+  comments:
+    destroy:
+      cmt_success: "Xóa thành công"
+    create:
+      error: "Lỗi"
+      not_found: "Không tìm thấy"
+    comment:
+      comment: "Bình luận"
+      placeholder: "Bình luận ...."
+      delete: "Xóa"
+      sure: "Bạn chắc chắc chưa ?"
+    form:
+      comment: "Bình luận"
+      placeholder: "Bình luận..."
+    child-comment:
+      sure: "Bạn chắc chắc chưa ?"

@@ -5,7 +5,11 @@ class SessionsController < ApplicationController
     user = User.find_by email: params[:session][:email].downcase
     if user&.authenticate params[:session][:password]
       log_in user
-      redirect_to root_path
+      if admin_user?
+        redirect_to admin_root_path
+      else
+        redirect_to root_path
+      end
     else
       flash.now[:danger] = t ".error"
       render :new

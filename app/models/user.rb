@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :favoriate_movies, dependent: :destroy
   has_many :movies, through: :favoriate_movies
 
-  has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy, as: :commentable
 
   enum role: {user: 0, admin: 1}
 
