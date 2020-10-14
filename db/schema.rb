@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_032512) do
+ActiveRecord::Schema.define(version: 2020_10_09_031215) do
 
   create_table "cast_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
@@ -33,10 +33,12 @@ ActiveRecord::Schema.define(version: 2020_10_06_032512) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id", null: false
-    t.bigint "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["movie_id"], name: "index_comments_on_movie_id"
+    t.string "commentable_type"
+    t.integer "commentable_id"
+    t.index ["commentable_id"], name: "index_comments_on_commentable_id"
+    t.index ["commentable_type"], name: "index_comments_on_commentable_type"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -76,7 +78,7 @@ ActiveRecord::Schema.define(version: 2020_10_06_032512) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "avatar_url"
+    t.string "avatar"
     t.integer "role", default: 0
     t.boolean "activated", default: false
     t.datetime "created_at", precision: 6, null: false
@@ -86,7 +88,6 @@ ActiveRecord::Schema.define(version: 2020_10_06_032512) do
 
   add_foreign_key "cast_movies", "casts"
   add_foreign_key "cast_movies", "movies"
-  add_foreign_key "comments", "movies"
   add_foreign_key "comments", "users"
   add_foreign_key "favoriate_movies", "movies"
   add_foreign_key "favoriate_movies", "users"

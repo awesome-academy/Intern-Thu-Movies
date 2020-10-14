@@ -17,9 +17,14 @@ module SessionsHelper
   end
 
   def logged_in_user
-    unless logged_in?
-      flash[:danger] = t ".please_login"
-      redirect_to login_path
-    end
+    return if logged_in?
+
+    flash[:danger] = t ".please_login"
+    redirect_to login_path
   end
+
+  def admin_user?
+    current_user&.admin?
+  end
+  
 end

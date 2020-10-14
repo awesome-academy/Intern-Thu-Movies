@@ -4,7 +4,7 @@ class Movie < ApplicationRecord
                   :runtime, :director, :genre_id].freeze
   belongs_to :genre
 
-  has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy, as: :commentable
 
   has_many :favoriate_movies, dependent: :destroy
   has_many :users, through: :favoriate_movies

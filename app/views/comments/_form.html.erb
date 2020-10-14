@@ -1,0 +1,6 @@
+<%= form_for [commentable, Comment.new], html: {class:"form-inline"}, remote: true do |f| %>
+  <%= f.text_area :content, placeholder: t(".placeholder"), class: "pb-cmnt-textarea", id: "comment-input-parent" %>
+  <div class="btn-group float-right" id="comment-btn">
+    <%= f.submit t(".comment"), class:"btn btn-info"%>
+  </div>
+<% end %>

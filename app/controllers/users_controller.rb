@@ -14,6 +14,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.update user_params
+      flash[:success] = ".user_updated"
+      redirect_to root_path
+    else
+      flash[:danger] = t ".user_update_fail"
+      render :edit
+    end
+  end
+
   private
 
   def user_params

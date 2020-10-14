@@ -101,19 +101,16 @@ nav .login ul li a img{
   content: ' *';
 }
 
-
 /*List movie*/
 .content {
   max-width: 90%;
   .list_movie a {
     text-decoration: none;
-
   }
 }
 
 .card-block {
   min-height: 300px;
-
 }
 
 
@@ -381,6 +378,46 @@ input.search-submit {
 }
 
 .img-comment{
-  height:50px;
-  width:50px;
+  height:70px;
+  width:70px;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    padding: 20px;
+    height: 130px;
+    width: 100%;
+    border: 1px solid $white;
+    margin-bottom: 10px;
+}
+
+#comment-btn{
+  position: relative;
+  left: 80%;
+}
+
+.all-form{
+  position: relative;
+  left: 10%;
+  width: 90%;
+
+}
+
+.all-parent{
+  margin-top:30px;
+}
+
+#parent-cmt{
+  display: none;
+}
+
+#delete-cmt {
+
+  a{
+    text-decoration: none;
+
+    &:hover{
+      color: $red;
+    }
+  }
 }

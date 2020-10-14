@@ -1,0 +1,7 @@
+<% if @commentable.instance_of?(Movie) %>
+  $('<%= j render "comments/comment", commentable: @comment %>').prependTo('#all-parent-cmt');
+  $('#comment-input-parent').val('');
+<% else %>
+  $('#cmt-child-<%= @commentable.id %>').html('<%= j render partial: "comments/child-comment", collection: @commentable.comments, as: :child %>');
+  $('#comment-input-1').val('');
+<% end %>

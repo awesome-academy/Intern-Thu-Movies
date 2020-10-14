@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-   before_action :logged_in_user, only: %i(watch)
+  before_action :logged_in_user, only: :watch
 
   def index
     @movies = Movie.page params[:page]
@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
 
   def watch
     @movie = Movie.find_by slug: params[:slug]
+    @comments = @movie.comments
     return if @movie
 
     flash[:danger] = t ".not_found"
