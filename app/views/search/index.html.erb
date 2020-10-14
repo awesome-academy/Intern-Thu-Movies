@@ -1,0 +1,32 @@
+<div class="container" id="new-form-search">
+  <%= form_tag search_index_path, method: "get" do %>
+  <label>
+    <%= fa_icon "search" %>
+    <%= text_field_tag :movie, params[:movie] %>
+  </label>
+  <% end %>
+</div>
+
+<hr id="hr">
+<div class="container" id="search-container">
+  <div class="row">
+    <div class="col-3">
+      <div class="result">
+        <h5 class="align-bottom"><%= t ".search_results" %></h3>
+      </div>
+      <div>
+        <ul class="result-count">
+          <li class="selected">
+            <span id="movie"><%= t ".movies" %></span>
+            <span id="count"><%= @movies.count %></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--content-->
+    <div class="col-9">
+      <%= render partial: "search/movie", collection: @movies, as: :movie %>
+    </div>
+  </div>
+</div>

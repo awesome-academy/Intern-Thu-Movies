@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get "/movies/:slug", to: "movies#show", as: :movie
     get "/movies/watch/:slug", to: "movies#watch", as: :watch
 
+    resources :search, only: :index
     resources :movies do
       resources :comments, only: %i(create destroy)
     end
