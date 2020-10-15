@@ -23,4 +23,6 @@ class Movie < ApplicationRecord
   mount_uploader :background, BackgroundUploader
 
   delegate :genre_name, to: :genre
+
+  scope :by_title, ->(title){where("title LIKE ?", "%#{title}%")}
 end

@@ -23,7 +23,7 @@ en:
       logout: "Logout"
   movies:
     index:
-      welcome: "Welecome !"
+      welcome: "Welcome !"
       introduce: "Millions of movies, TV shows and people to discover. Explore now."
       popular: "Popular"
       trailers: "Lastest Trailers"
@@ -132,3 +132,7 @@ en:
       placeholder: "Write your comment"
     child-comment:
       sure: "Are you sure?"
+  search:
+    index:
+      search_results: "Search Results"
+      movies: "Movies"

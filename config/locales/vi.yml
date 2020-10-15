@@ -132,3 +132,7 @@ vi:
       placeholder: "Bình luận..."
     child-comment:
       sure: "Bạn chắc chắc chưa ?"
+  search:
+    index:
+      search_results: "Kết quả"
+      movies: "Phim"
