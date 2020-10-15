@@ -9,16 +9,18 @@
       <br>
       <div class="title">
         <%= link_to @movie.title, "#" %>
-        <span >(<%= @movie.release_date.strftime Settings.movie.date %>)</span>
+        <span>(<%= @movie.release_date.strftime Settings.movie.date %>)</span>
       </div>
       <div class="facts">
         <span><%= @movie.release_date %> - </span>
         <span><%= @movie.genre_name %> - </span>
         <span><%= @movie.runtime %></span>
       </div>
+
       <br>
       <%= render "social" %>
       <br>
+
       <div class="header_info">
         <h4><%= t ".overview" %></h4>
         <p><%= @movie.overview %></p>

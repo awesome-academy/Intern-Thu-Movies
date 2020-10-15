@@ -1,0 +1,18 @@
+<br>
+<div class="container" id="search-container">
+  <div class="row">
+    <div class="col-3">
+      <div class="result">
+        <h5 class="align-bottom">
+          <%= t ".favoriate_movies" %>
+          <span id="count-favoriate"><%= @favoriate_movies.count %></span>
+        </h3>
+      </div>
+    </div>
+
+    <!--content-->
+    <div class="col-9">
+      <%= render partial: "favoriate_movies/movie", collection: @favoriate_movies, as: :movie %>
+    </div>
+  </div>
+</div>

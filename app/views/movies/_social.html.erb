@@ -1,14 +1,14 @@
-<div id="social">
-  <%= link_to "#" do %>
+<div class="row w-75" id="social">
+  <div class="col-1 icon-movie"  >
     <%= fa_icon "list" %>
-  <% end %>
-  <%= link_to "#" do %>
-    <%= fa_icon "heart" %>
-  <% end %>
-  <%= link_to "#" do %>
+  </div>
+  <div class="col-1 icon-movie"  >
     <%= fa_icon "bookmark" %>
-  <% end %>
-  <%= link_to "#" do %>
+  </div>
+  <div class="col-1 icon-movie" id="favoriate-movie" >
+    <%= render partial: "favoriate_movies/favoriate", movie: @movie %>
+  </div>
+  <div class="col-1 icon-movie"  >
     <%= fa_icon "star" %>
-  <% end %>
+  </div>
 </div>

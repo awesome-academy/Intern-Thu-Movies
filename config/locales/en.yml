@@ -136,3 +136,10 @@ en:
     index:
       search_results: "Search Results"
       movies: "Movies"
+  favoriate_movies:
+    index:
+      favoriate_movies: "Favoriate Movies"
+    destroy:
+      error: "Error"
+    create:
+      not_found: "not_found"

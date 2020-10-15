@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_09_031215) do
+ActiveRecord::Schema.define(version: 2020_10_15_013428) do
 
   create_table "cast_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_10_09_031215) do
   create_table "favoriate_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
     t.bigint "user_id", null: false
-    t.integer "type", default: 0
+    t.integer "typelike", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_favoriate_movies_on_movie_id"
