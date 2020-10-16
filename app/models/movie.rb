@@ -25,4 +25,5 @@ class Movie < ApplicationRecord
   delegate :genre_name, to: :genre
 
   scope :by_title, ->(title){where("title LIKE ?", "%#{title}%")}
+  scope :by_id, ->(id_movie){where id: id_movie}
 end

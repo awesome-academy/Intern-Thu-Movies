@@ -2,8 +2,8 @@
   <div class="col-1 icon-movie"  >
     <%= fa_icon "list" %>
   </div>
-  <div class="col-1 icon-movie"  >
-    <%= fa_icon "bookmark" %>
+  <div class="col-1 icon-movie" id="bookmark_movies" >
+    <%= render partial: "bookmark_movies/bookmark", movie: @movie %>
   </div>
   <div class="col-1 icon-movie" id="favoriate-movie" >
     <%= render partial: "favoriate_movies/favoriate", movie: @movie %>

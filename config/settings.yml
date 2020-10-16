@@ -16,5 +16,6 @@ movie:
   overview: 1000
 comment: 2
 search: 5
-favoriate: 5
+favorite: 5
+enum_bookmark: 1
 enum_favoriate: 0

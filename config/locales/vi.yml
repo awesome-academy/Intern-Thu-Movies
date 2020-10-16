@@ -138,7 +138,14 @@ vi:
       movies: "Phim"
   favoriate_movies:
     index:
-      favoriate_movies: "Phim yêu thích"
+      favorite_movies: "Phim yêu thích"
+    destroy:
+      error: "Lỗi"
+    create:
+      not_found: "Không tìm thấy"
+  bookmark_movies:
+    index:
+      bookmark_list: "Danh sách phim xem sau"
     destroy:
       error: "Lỗi"
     create:

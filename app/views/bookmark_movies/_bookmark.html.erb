@@ -1,0 +1,21 @@
+<% if logged_in? %>
+  <% if current_user.liked? @movie, Settings.enum_bookmark %>
+    <%= form_tag bookmark_movie_path(@movie), method: :delete, remote: true do |f| %>
+      <%= hidden_field_tag :movie_id, @movie.id %>
+      <%= hidden_field_tag :type, "bookmark" %>
+      <%= button_to "" do %>
+        <%= fa_icon "bookmark", id:"icon-pink" %>
+      <% end %>
+    <% end %>
+  <% else %>
+  <%= form_for current_user.favoriate_movies.new, url: bookmark_movies_path, remote: true do |f| %>
+      <%= hidden_field_tag :movie_id, @movie.id %>
+      <%= hidden_field_tag :type, "bookmark" %>
+      <%= button_to "" do %>
+        <%= fa_icon "bookmark", id:"icon-heart-white" %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% else %>
+   <%= fa_icon "bookmark", id:"heart-white" %>
+<% end %>
