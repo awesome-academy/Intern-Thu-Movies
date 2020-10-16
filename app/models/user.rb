@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = Settings.user.email.regex
   USER_PERMIT = %i(name email password password_confirmation).freeze
+
   has_many :favoriate_movies, dependent: :destroy
   has_many :movies, through: :favoriate_movies
 
@@ -20,6 +21,10 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_secure_password
+
+  def liked? movie, typelike
+    FavoriateMovie.by_movie_id(movie.id).by_typelike_id(typelike).exists?
+  end
 
   private
 

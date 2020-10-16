@@ -136,3 +136,10 @@ vi:
     index:
       search_results: "Kết quả"
       movies: "Phim"
+  favoriate_movies:
+    index:
+      favoriate_movies: "Phim yêu thích"
+    destroy:
+      error: "Lỗi"
+    create:
+      not_found: "Không tìm thấy"

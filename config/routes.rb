@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     get "/movies/watch/:slug", to: "movies#watch", as: :watch
 
     resources :search, only: :index
+
+    resources :favoriate_movies, only: %i(index create destroy)
+
     resources :movies do
       resources :comments, only: %i(create destroy)
     end
