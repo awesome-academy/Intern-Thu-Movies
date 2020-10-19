@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
     resources :favoriate_movies, :bookmark_movies, only: %i(index create destroy)
 
+    resources :rates, only: %i(create destroy)
+
     resources :movies do
       resources :comments, only: %i(create destroy)
     end

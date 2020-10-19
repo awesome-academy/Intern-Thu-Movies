@@ -22,6 +22,10 @@ vi:
       watch-later: "Xem sau"
       logout: "Đăng xuất"
   movies:
+    score:
+      ratings: "Đánh giá"
+    social:
+      user_score: "Điểm"
     index:
       welcome: "Chào mừng !"
       introduce: "Hàng triệu bộ phim, chương trình truyền hình. Khám phá ngay."

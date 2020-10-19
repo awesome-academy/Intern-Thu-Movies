@@ -1,0 +1,15 @@
+<div class="total-rating">
+  &nbsp;
+  <span><%= @movie.rates.count %></span>
+  <span><%= t ".ratings" %></span>
+</div>
+
+<% if @movie.check_score.blank? %>
+  <p><span><%= Settings.zero %><sup>%</sup></span></p>
+<% else %>
+  <p>
+    <span>
+      <%= number_with_precision(@movie.average_score, precision: Settings.zero) %><sup>%</sup>
+    </span>
+  </p>
+<% end %>

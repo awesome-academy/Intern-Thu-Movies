@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_013428) do
+ActiveRecord::Schema.define(version: 2020_10_17_233007) do
 
   create_table "cast_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
@@ -75,6 +75,16 @@ ActiveRecord::Schema.define(version: 2020_10_15_013428) do
     t.index ["genre_id"], name: "index_movies_on_genre_id"
   end
 
+  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "score"
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_rates_on_movie_id"
+    t.index ["user_id"], name: "index_rates_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -92,4 +102,6 @@ ActiveRecord::Schema.define(version: 2020_10_15_013428) do
   add_foreign_key "favoriate_movies", "movies"
   add_foreign_key "favoriate_movies", "users"
   add_foreign_key "movies", "genres"
+  add_foreign_key "rates", "movies"
+  add_foreign_key "rates", "users"
 end

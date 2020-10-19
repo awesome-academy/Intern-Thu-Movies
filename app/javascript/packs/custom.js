@@ -14,4 +14,20 @@ $(function () {
 
     $('.' + replyId).toggle();
   });
+
+  $('#rate-show').hide();
+
+  $("#social").on("click", "#rate-star", function () {
+    $("#rate-show").toggle();
+  });
+
+  $('.click-rate').on('click', function () {
+    $('#rate-show').hide();
+  });
+
+  $('.total-rating').hide();
+
+  $('#score').on('click', function () {
+    $('.total-rating').toggle();
+  });
 });

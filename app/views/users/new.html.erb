@@ -9,7 +9,7 @@
     <div class="col-6 form-sign-up">
       <h4 class="text-center"><b><%= t ".signup" %></b></h4>
       <%= form_for @user do |f| %>
-        <%= render "shared/error_messages" %>
+        <%= render "shared/error_messages", object: f.object %>
 
         <%= f.label :name, class: "control-label-required" %>
         <%= f.text_field :name, class: "form-control" %>
