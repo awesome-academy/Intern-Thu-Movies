@@ -138,7 +138,14 @@ en:
       movies: "Movies"
   favoriate_movies:
     index:
-      favoriate_movies: "Favoriate Movies"
+      favorite_movies: "Favorite Movie"
+    destroy:
+      error: "Error"
+    create:
+      not_found: "not_found"
+  bookmark_movies:
+    index:
+      bookmark_list: "Bookmark List"
     destroy:
       error: "Error"
     create:

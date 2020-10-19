@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
     resources :search, only: :index
 
-    resources :favoriate_movies, only: %i(index create destroy)
+    resources :favoriate_movies, :bookmark_movies, only: %i(index create destroy)
 
     resources :movies do
       resources :comments, only: %i(create destroy)
@@ -24,5 +24,7 @@ Rails.application.routes.draw do
       root "dashboards#index"
       resources :movies
     end
+
+    match "*unmatched", to: "application#rescue_404_exception", via: :all
   end
 end

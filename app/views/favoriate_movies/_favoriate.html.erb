@@ -1,9 +1,8 @@
-<% unless logged_in? %>
-  <%= fa_icon "heart", id:"heart-white" %>
-<% else %>
+<% if logged_in? %>
   <% if current_user.liked? @movie, Settings.enum_favoriate %>
     <%= form_tag favoriate_movie_path(@movie), method: :delete, remote: true do |f| %>
       <%= hidden_field_tag :movie_id, @movie.id %>
+      <%= hidden_field_tag :type, "favoriate" %>
       <%= button_to "", class:"btn-heart" do %>
         <%= fa_icon "heart", id:"icon-heart-red" %>
       <% end %>
@@ -11,9 +10,12 @@
   <% else %>
   <%= form_for current_user.favoriate_movies.new, remote: true do |f| %>
       <%= hidden_field_tag :movie_id, @movie.id %>
+      <%= hidden_field_tag :type, "favoriate" %>
       <%= button_to "", class:"btn-heart" do %>
         <%= fa_icon "heart", id:"icon-heart-white" %>
       <% end %>
     <% end %>
   <% end %>
+<% else %>
+  <%= fa_icon "heart", id:"heart-white" %>
 <% end %>

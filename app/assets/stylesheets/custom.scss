@@ -3,6 +3,7 @@
 @import 'color';
 
 body {
+  overflow-x: hidden;
   background: $white;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -67,8 +68,8 @@ nav .logo a {
 }
 
 nav .login a img {
-  width: 50px;
-  height: 25px;
+  width: 40px;
+  height: 20px;
 }
 
 nav .login ul li a img{
@@ -554,6 +555,9 @@ input.search-submit {
 
   #icon-heart-white{
     color: $white;
+  }
+  #icon-pink{
+    color:$pink;
   }
 
   button{
