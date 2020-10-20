@@ -19,6 +19,7 @@ class Movie < ApplicationRecord
   validates :trailer, presence: true
   validates :overview, length: {maximum: Settings.movie.overview}
   validates :runtime, presence: true
+  validates :image, presence: true
 
   mount_uploader :image, ImageUploader
   mount_uploader :film, FilmUploader

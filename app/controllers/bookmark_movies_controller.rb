@@ -9,24 +9,23 @@ class BookmarkMoviesController < ApplicationController
   end
 
   def create
-    @bookmark_movie = current_user
-                      .favoriate_movies
-                      .new(movie_id: params[:movie_id], typelike: params[:type])
+    @bookmark_movie = current_user.favoriate_movies.build bookmark_movie_params
 
     if @bookmark_movie.save
-      respond_to :js
+      flash.now[:success] = t ".success"
     else
-      redirect_to root_path
+      flash.now[:danger] = t ".failed"
     end
+    respond_to :js
   end
 
   def destroy
     if @bookmark.destroy
-      respond_to :js
+      flash.now[:success] = t ".success"
     else
-      flash[:danger] = t ".error"
-      redirect_to root_path
+      flash.now[:danger] = t ".failed"
     end
+    respond_to :js
   end
 
   private
@@ -38,10 +37,15 @@ class BookmarkMoviesController < ApplicationController
   def find_bookmark_movie
     @bookmark = current_user
                 .favoriate_movies
-                .find_by movie_id: params[:movie_id], typelike: params[:type]
+                .find_by(movie_id: params[:movie_id],
+                         typelike: params[:typelike])
     return if @bookmark
 
     flash[:danger] = t ".not_found"
     redirect_to root_path
+  end
+
+  def bookmark_movie_params
+    params.permit FavoriateMovie::FAVORITE_PERMIT
   end
 end

@@ -9,24 +9,23 @@ class FavoriateMoviesController < ApplicationController
   end
 
   def create
-    @favorite_movie = current_user
-                      .favoriate_movies
-                      .new(movie_id: params[:movie_id], typelike: params[:type])
+    @favorite_movie = current_user.favoriate_movies.build favorite_movie_params
 
     if @favorite_movie.save
-      respond_to :js
+      flash.now[:success] = t ".success"
     else
-      redirect_to root_path
+      flash.now[:danger] = t ".failed"
     end
+    respond_to :js
   end
 
   def destroy
     if @favoriate.destroy
-      respond_to :js
+      flash.now[:success] = t ".success"
     else
-      flash[:danger] = t ".error"
-      redirect_to root_path
+      flash.now[:danger] = t ".failed"
     end
+    respond_to :js
   end
 
   private
@@ -38,10 +37,15 @@ class FavoriateMoviesController < ApplicationController
   def find_favoriate_movie
     @favoriate = current_user
                  .favoriate_movies
-                 .find_by movie_id: params[:movie_id], typelike: params[:type]
+                 .find_by(movie_id: params[:movie_id],
+                          typelike: params[:typelike])
     return if @favoriate
 
     flash[:danger] = t ".not_found"
     redirect_to root_path
+  end
+
+  def favorite_movie_params
+    params.permit FavoriateMovie::FAVORITE_PERMIT
   end
 end

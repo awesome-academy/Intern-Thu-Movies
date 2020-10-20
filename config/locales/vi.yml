@@ -143,14 +143,27 @@ vi:
   favoriate_movies:
     index:
       favorite_movies: "Phim yêu thích"
-    destroy:
-      error: "Lỗi"
     create:
+      success: "Đã thêm vào danh sách yêu thích"
+      failed: "Thêm phim thất bại"
       not_found: "Không tìm thấy"
+    destroy:
+      success: "Xóa khỏi danh sách yêu thích"
+      failed: "xóa thất bại"
   bookmark_movies:
     index:
-      bookmark_list: "Danh sách phim xem sau"
-    destroy:
-      error: "Lỗi"
+      favorite_movies: "Phim yêu thích"
     create:
+      success: "Đã thêm vào danh sách xem sau"
+      failed: "Thêm phim thất bại"
       not_found: "Không tìm thấy"
+    destroy:
+      success: "Đã xóa khỏi danh sách xem sau"
+      failed: "Xóa thất bại"
+  rates:
+    create:
+      success: "Đánh giá của bạn đã được lưu"
+      failed: "Đánh giá thất bại"
+    destroy:
+      success: "Đã xóa đánh giá của bạn"
+      failed: "Đánh giá thất bại"

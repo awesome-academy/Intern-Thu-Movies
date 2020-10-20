@@ -50,3 +50,4 @@ spec/requests/
 spec/views
 app/assets/images
 /public
+app/views/kaminari

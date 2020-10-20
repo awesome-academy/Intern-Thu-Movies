@@ -167,6 +167,9 @@ footer {
   min-height: 600px;
 }
 
+#play-movie{
+  font-weight: 900;
+}
 
 .play i {
   width: 300px;
@@ -674,6 +677,8 @@ input.search-submit {
   z-index: 2;
   background:black;
   border: 2px solid $border-score;
+  display:none;
+  
   span{
     font-size: 20px;
   }

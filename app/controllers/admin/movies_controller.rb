@@ -3,7 +3,7 @@ class Admin::MoviesController < AdminController
   before_action :load_data, only: %i(index new edit)
 
   def index
-    @movies = Movie.page params[:page]
+    @movies = Movie.page(params[:page]).per Settings.five
   end
 
   def new
@@ -35,11 +35,11 @@ class Admin::MoviesController < AdminController
 
   def destroy
     if @movie.destroy
-      flash[:success] = t ".destroy.movie_deleted"
+      flash[:success] = t ".movie_deleted"
     else
-      falsh[:danger] = t ".destroy.fail"
+      falsh[:danger] = t ".fail"
     end
-    redirect_to admin_movies_path
+    respond_to :js
   end
 
   private
@@ -49,11 +49,7 @@ class Admin::MoviesController < AdminController
   end
 
   def find_movie
-    @movie = Movie.find_by id: params[:id]
-    return if @movie
-
-    flash[:danger] = t ".new.not_found"
-    redirect_to root_admin_path
+    @movie = Movie.find params[:id]
   end
 
   def load_data

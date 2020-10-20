@@ -7,19 +7,19 @@ class RatesController < ApplicationController
     @rate_movie = current_user.rates.build rated_movie_params
 
     if @rate_movie.save
-      respond_to :js
+      flash.now[:success] = t ".success"
     else
-      redirect_to root_path
+      flash.now[:danger] = t ".failed"
     end
   end
 
   def destroy
     if @movie_rated.destroy
-      respond_to :js
+      flash.now[:success] = t ".success"
     else
-      flash[:danger] = t ".error"
-      redirect_to root_path
+      flash.now[:danger] = t ".failed"
     end
+    respond_to :js
   end
 
   private
