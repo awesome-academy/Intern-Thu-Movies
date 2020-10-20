@@ -24,6 +24,11 @@
     <%= link_to admin_movie_path(movie), method: :delete, data: { confirm: t(".sure") }, remote: true do %>
       <%= fa_icon "trash", id:"trash" %>
     <% end %>
+    &nbsp;
+    &nbsp;
+    <span id="lock-<%= movie.id %>" class="lock">
+      <%= render "admin/layouts/movies/lock", movie: movie %>
+    </span>
 
     <%= render "admin/layouts/movies/read", movie: movie %>
   </td>

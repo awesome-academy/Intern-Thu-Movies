@@ -1,0 +1,9 @@
+<% if movie.lock_movie? %>
+  <%= link_to lock_admin_movie_path(movie.id, status: "open"), method: :patch, remote: true do %>
+    <%= fa_icon "lock", id:"color-lock"  %>
+  <% end %>
+<% else %>
+  <%= link_to lock_admin_movie_path(movie.id, status: "lock_movie"), method: :patch, remote: true  do %>
+    <%= fa_icon "unlock", id:"color-unlock" %>
+  <% end %>
+<% end %>

@@ -3,15 +3,15 @@ class Admin::MoviesController < AdminController
   before_action :load_data, only: %i(index new edit)
 
   def index
-    @movies = Movie.page(params[:page]).per Settings.five
+    @movies = Movie.unscoped.page(params[:page]).per Settings.five
   end
 
   def new
-    @movie = Movie.new
+    @movie = Movie.unscoped.new
   end
 
   def create
-    @movie = Movie.new movie_params
+    @movie = Movie.unscoped.new movie_params
     if @movie.save
       flash[:success] = ".success"
       redirect_to admin_movies_path
@@ -37,7 +37,16 @@ class Admin::MoviesController < AdminController
     if @movie.destroy
       flash[:success] = t ".movie_deleted"
     else
-      falsh[:danger] = t ".fail"
+      flash[:danger] = t ".fail"
+    end
+    respond_to :js
+  end
+
+  def lock
+    if @movie.update status: params[:status]
+      flash[:success] = t ".success"
+    else
+      flash[:danger] = t ".fail"
     end
     respond_to :js
   end
@@ -49,7 +58,7 @@ class Admin::MoviesController < AdminController
   end
 
   def find_movie
-    @movie = Movie.find params[:id]
+    @movie = Movie.unscoped.find params[:id]
   end
 
   def load_data

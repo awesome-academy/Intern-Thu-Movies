@@ -24,7 +24,9 @@ Rails.application.routes.draw do
 
     namespace :admin do
       root "dashboards#index"
-      resources :movies
+      resources :movies do
+        patch "lock", on: :member
+      end
     end
 
     match "*unmatched", to: "application#rescue_404_exception", via: :all
