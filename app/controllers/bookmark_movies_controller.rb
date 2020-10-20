@@ -44,8 +44,4 @@ class BookmarkMoviesController < ApplicationController
     flash[:danger] = t ".not_found"
     redirect_to root_path
   end
-
-  def favorite_params
-    params.require(:user).permit User::USER_PERMIT
-  end
 end

@@ -22,6 +22,10 @@ en:
       watch-later: "Watch Later"
       logout: "Logout"
   movies:
+    score:
+      ratings: "Ratings"
+    social:
+      user_score: "User Score"
     index:
       welcome: "Welcome !"
       introduce: "Millions of movies, TV shows and people to discover. Explore now."
@@ -37,6 +41,7 @@ en:
       recommendations: "Recommendations"
       play_trailer: "Play trailer"
       play_movie: "Play movie"
+
     watch:
       please_login: "Please log in."
       not_found: "Not found movie"

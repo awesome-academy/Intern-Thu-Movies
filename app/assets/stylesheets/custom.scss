@@ -335,18 +335,27 @@ input.search-submit {
   border-radius: 27px;
   -moz-border-radius: 27px;
   -webkit-border-radius: 27px;
+
 }
 
+#user-score{
+  color:$white;
+  font-size:17px;
+  font-weight: 900;
+}
 .header_info {
+
   h4 {
   color: $white;
   font-size: 30px;
   font-weight: 900;
   }
+
   p{
     color: $white;
     max-width:800px
   }
+
   span{
     color: $white;
   }
@@ -402,7 +411,6 @@ input.search-submit {
   position: relative;
   left: 10%;
   width: 90%;
-
 }
 
 .all-parent{
@@ -550,7 +558,7 @@ input.search-submit {
   }
 
   #icon-heart-red{
-    color: $red;
+    color: $heart;
   }
 
   #icon-heart-white{
@@ -567,6 +575,27 @@ input.search-submit {
   }
 }
 
+#social .icon-movie-rated{
+   .star {
+    display: inline-block;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 2px solid $white;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px $color_hover;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: $white;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius: 27px;
+    -webkit-border-radius: 27px;
+  }
+}
 #heart-white{
   color: $white;
 }
@@ -581,4 +610,75 @@ input.search-submit {
   background-color: $white;
   padding: 0px 10px;
   border-radius: 8px;
+}
+
+/*scores*/
+.scores {
+  height: 65px;
+  width: 65px;
+  background:black;
+  border-radius:50%;
+  border:4px solid #21D07A;
+  cursor: pointer;
+  position: relative;
+}
+
+.scores p {
+  color: white;
+  margin: 0;
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.scores p span {
+  font-size: 20px;
+}
+
+/*Star*/
+
+/*new star */
+.rating {
+  position:absolute;
+  height: 50px;
+  border: 1px solid black;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  background: #032541;
+  border-radius: 3px;
+}
+
+.rating a{
+  font-size:33px;
+}
+
+.rating a:hover{
+    text-decoration: none;
+}
+.rating >a:hover:before,
+.rating >a:hover~a:before {
+  content: "\2605";
+  position: absolute;
+  color: $star-color;
+}
+
+.total-rating{
+  position: absolute;
+  transform: translate(40%, 0);
+  height: 50px;
+  width: 130px;
+  color: $white;
+  z-index: 2;
+  background:black;
+  border: 2px solid $border-score;
+  span{
+    font-size: 20px;
+  }
+}
+
+#star-rated-color{
+  color: $star-color;
 }

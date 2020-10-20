@@ -32,11 +32,7 @@ class FavoriateMoviesController < ApplicationController
   private
 
   def find_movie
-    @movie = Movie.find_by id: params[:movie_id]
-    return if @movie
-
-    flash[:danger] = t ".not_found"
-    redirect_to root_path
+    @movie = Movie.find params[:movie_id]
   end
 
   def find_favoriate_movie

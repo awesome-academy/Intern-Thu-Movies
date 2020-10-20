@@ -19,3 +19,5 @@ search: 5
 favorite: 5
 enum_bookmark: 1
 enum_favoriate: 0
+zero: 0
+twenty: 20

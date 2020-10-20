@@ -1,0 +1,11 @@
+<% if logged_in? %>
+  <% if current_user.rated? @movie %>
+    <%= link_to rate_path(@movie,movie_id: @movie.id), method: :delete, remote: true do %>
+      <%= fa_icon "star", id: "star-rated-color" %>
+    <% end %>
+  <% else %>
+    <%= fa_icon "star", id: "rate-star", class: "star" %>
+  <% end %>
+<% else %>
+  <%= fa_icon "star", class: "star" %>
+<% end %>

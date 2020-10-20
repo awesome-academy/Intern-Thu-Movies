@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy, as: :commentable
 
+  has_many :rates, dependent: :destroy
+
   enum role: {user: 0, admin: 1}
 
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum}
@@ -23,7 +25,11 @@ class User < ApplicationRecord
   has_secure_password
 
   def liked? movie, typelike
-    FavoriateMovie.by_movie_id(movie.id).by_typelike_id(typelike).exists?
+    favoriate_movies.by_movie_id(movie.id).by_typelike_id(typelike).exists?
+  end
+
+  def rated? movie
+    rates.by_movie_id(movie.id).present?
   end
 
   private
