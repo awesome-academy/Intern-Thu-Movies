@@ -1,4 +1,6 @@
 class FavoriateMovie < ApplicationRecord
+  FAVORITE_PERMIT = %i(user_id movie_id typelike).freeze
+
   belongs_to :movie
   belongs_to :user
 

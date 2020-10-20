@@ -1,4 +1,4 @@
-<tr>
+<tr id="movie-<%= movie.id %>">
   <td class="counterCell" scope="row"></td>
   <td><%= movie.title %></td>
   <td class="text-truncate" id="img-film">
@@ -9,7 +9,7 @@
   <td class="text-truncate" id="truncate"><%= movie.genre_name %></td>
   <td><%= movie.runtime %></td>
   <td><%= movie.director %></td>
-  <td><%= movie.release_date.strftime Settings.movie.day %></td>
+  <td><%= movie.release_date %></td>
   <td id="action">
     <%= link_to "", data: {toggle: "modal", target: "#"+movie.slug} do %>
       <%= fa_icon "eye", id:"eye" %>
@@ -21,7 +21,7 @@
     <% end %>
     &nbsp;
     &nbsp;
-    <%= link_to admin_movie_path(movie), method: :delete, data: { confirm: t(".sure") } do %>
+    <%= link_to admin_movie_path(movie), method: :delete, data: { confirm: t(".sure") }, remote: true do %>
       <%= fa_icon "trash", id:"trash" %>
     <% end %>
 

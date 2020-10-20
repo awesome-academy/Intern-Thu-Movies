@@ -21,17 +21,16 @@
       <%= render "social" %>
       <br>
 
-      <div class="header_info">
-        <h4><%= t ".overview" %></h4>
-        <p><%= @movie.overview %></p>
-        <p id="director"><%= t ".director" %></p>
-        <span><%= @movie.director %></span>
-      </div>
-      <br>
-      <div>
-        <%= link_to t(".play_trailer"), "", data: {toggle: "modal", target: "#"+@movie.slug }, class:"btn btn-light" %>
-        <%= link_to t(".play_movie"), watch_path, class:"btn btn-info"%>
-      </div>
+    <div class="header_info">
+      <h4><%= t ".overview" %></h4>
+      <p><%= @movie.overview %></p>
+      <p id="director"><%= t ".director" %></p>
+      <span><%= @movie.director %></span>
+    </div>
+    <br>
+    <div>
+      <%= link_to t(".play_trailer"), "", data: {toggle: "modal", target: "#"+@movie.slug }, class:"btn btn-light play", id:"play-movie" %>
+      <%= link_to t(".play_movie"), watch_path, class:"btn btn-info", id:"play-movie" %>
     </div>
   </div>
 </div>
