@@ -28,10 +28,18 @@ class Movie < ApplicationRecord
   mount_uploader :background, BackgroundUploader
 
   delegate :genre_name, to: :genre
-  default_scope { where(status: 1) }
-  scope :by_title, ->(title){where("title LIKE ?", "%#{title}%")}
+  default_scope{where(status: Settings.movie.status_open)}
+  scope :by_title, (lambda do |title|
+    where("title LIKE ?", "%#{title}%") if title.present?
+  end)
+  scope :by_director, (lambda do |director|
+    where("director LIKE ?", "%#{director}%") if director.present?
+  end)
+  scope :by_status, ->(status){where status: status if status.present?}
   scope :by_id, ->(id_movie){where id: id_movie}
-
+  scope :ordered_by_title, (lambda do |order_param|
+    order("title #{order_param}") if order_param.present?
+  end)
   def check_score
     rates.average :score
   end

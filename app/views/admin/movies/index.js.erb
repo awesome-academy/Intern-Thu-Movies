@@ -1,0 +1,3 @@
+$('#text-search').html('<%= j render @movies %>');
+$('#total-search').html('<%= j @movies.total_count %>');
+$('#paginate-search').html('<%= j paginate @movies %>');

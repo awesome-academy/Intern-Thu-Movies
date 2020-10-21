@@ -71,7 +71,7 @@ en:
         error_contains: "The from contains"
     movies:
       lock:
-        success: "Lock movie success"
+        success: "Change status movie success"
         fail: "Lock fail"
       form:
         cancel: "Cancel"
@@ -91,6 +91,7 @@ en:
         release_date: "Release date"
         action: "Action"
         manage_movie: "Manage movie"
+        total: "Total"
       new:
         create_new: "Create new movie"
     layouts:
@@ -113,6 +114,10 @@ en:
       header:
         home: "Home"
         contact: "Contact"
+        open: "Status Open"
+        lock_movie: "Status Lock"
+        search_title: "Search Title"
+        search_director: "Search Director"
       sidebar:
         home: "Home"
         admin: "Admin"

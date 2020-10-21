@@ -10,7 +10,6 @@ class BookmarkMoviesController < ApplicationController
 
   def create
     @bookmark_movie = current_user.favoriate_movies.build bookmark_movie_params
-
     if @bookmark_movie.save
       flash.now[:success] = t ".success"
     else
