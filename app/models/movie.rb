@@ -14,6 +14,8 @@ class Movie < ApplicationRecord
 
   has_many :rates, dependent: :destroy
 
+  enum status: {lock_movie: 0, open: 1}
+
   validates :title, presence: true, length: {maximum: Settings.movie.title}
   validates :slug, presence: true, length: {maximum: Settings.movie.slug}
   validates :trailer, presence: true
@@ -26,7 +28,7 @@ class Movie < ApplicationRecord
   mount_uploader :background, BackgroundUploader
 
   delegate :genre_name, to: :genre
-
+  default_scope { where(status: 1) }
   scope :by_title, ->(title){where("title LIKE ?", "%#{title}%")}
   scope :by_id, ->(id_movie){where id: id_movie}
 

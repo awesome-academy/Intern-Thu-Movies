@@ -1,7 +1,7 @@
 @import 'bootstrap';
 @import 'font-awesome';
 @import 'toastr/toastr';
-
+@import 'color';
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -142,6 +142,19 @@ table tr td:first-child::before {
 #img-film{
   width: 6%;
 }
+
+
+#color-lock {
+  font-size: 25px;
+  color: $star-color;
+}
+
+#color-unlock {
+  font-size: 25px;
+  color:$border-score;
+}
+
+
 /*end custom*/
 
 

@@ -70,6 +70,9 @@ en:
         error: "Error"
         error_contains: "The from contains"
     movies:
+      lock:
+        success: "Lock movie success"
+        fail: "Lock fail"
       form:
         cancel: "Cancel"
         save: "Save"
