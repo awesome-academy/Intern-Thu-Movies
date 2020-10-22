@@ -12,7 +12,9 @@ class MoviesController < ApplicationController
 
   def watch
     @movie = Movie.find_by slug: params[:slug]
+    Movie.update_counters [@movie.id], view: Settings.movie.inc_view_per
     @comments = @movie.comments
+
     return if @movie
 
     flash[:danger] = t ".not_found"

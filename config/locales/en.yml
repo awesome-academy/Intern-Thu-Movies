@@ -41,12 +41,12 @@ en:
       recommendations: "Recommendations"
       play_trailer: "Play trailer"
       play_movie: "Play movie"
-
+      views: "Views"
     watch:
       please_login: "Please log in."
       not_found: "Not found movie"
-    comment:
-      title: "Comment"
+      views: "Views"
+      comment: "Comment"
   shared:
     redirect:
       home: "Home"
@@ -92,6 +92,8 @@ en:
         action: "Action"
         manage_movie: "Manage movie"
         total: "Total"
+      destroy:
+        movie_deleted: "Movie deleted !"
       new:
         create_new: "Create new movie"
     layouts:
@@ -131,7 +133,7 @@ en:
         admin: "AdminLTE.io"
   comments:
     destroy:
-      cmt_success: "Delete success"
+      success: "Delete success"
     create:
       error: "Error"
       not_found: "Not found"

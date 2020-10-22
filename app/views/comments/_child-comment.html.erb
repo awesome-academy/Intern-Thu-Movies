@@ -2,15 +2,17 @@
   <div class="card-body">
     <div class="row">
       <div class="col-1">
-        <%= image_tag "logo.png", class:"rounded-circle img-comment" %>
+        <%= image_tag "icon-logo.jpg", class:"img-comment" %>
         <p class="text-secondary text-center"><%= time_ago_in_words child.created_at %></p>
       </div>
       <div class="col-md-10">
-        <p><strong><%= child.name %></strong></p>
+        <p id="name-user"><strong><%= child.name %></strong></p>
         <p><%= child.content %></p>
-        <% if current_user.id == child.user_id %>
-          <%= link_to t('.delete'), [@movie, child], method: :delete, data: { confirm: t('.sure') }, remote: true  %>
-        <% end %>
+        <p id="delete-cmt">
+          <% if current_user.id == child.user_id %>
+            <%= link_to t('.delete'), [@movie, child], method: :delete, data: { confirm: t('.sure') }, remote: true  %>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>

@@ -1,15 +1,15 @@
 <div id="comment-<%= commentable.id %>">
   <div class="row" >
     <div class="col-md-1">
-      <%= image_tag "logo.png", class:"rounded-circle img-comment" %>
+      <%= image_tag "icon-logo.jpg", class:"img-comment" %>
       <p class="text-secondary text-center"><%= time_ago_in_words commentable.created_at %></p>
     </div>
     <div class="col-md-10">
-      <p><strong><%= commentable.name %></strong></p>
+      <p id="name-user"><strong><%= commentable.name %></strong></p>
       <p><%= commentable.content %></p>
       <p id="delete-cmt">
-        <%= fa_icon "reply", class:"reply", data: "comment-#{commentable.id}" %>
-        <% if current_user.id == commentable.user_id%>
+        <%= content_tag(:span, "rely", class: "reply", data: "comment-#{commentable.id}") %>
+        <% if current_user.id == commentable.user_id %>
           <%= link_to t('.delete'), [@movie, commentable], method: :delete, data: { confirm: t('.sure'), remote: true } %>
         <% end %>
       </p>
@@ -20,8 +20,7 @@
   </div>
 
   <%= form_for [commentable, Comment.new], html: {class:"form-inline all-form comment-#{commentable.id}", id:"parent-cmt"}, remote: true do |f| %>
-    <%= f.text_area :content, placeholder: t(".placeholder"), class: "pb-cmnt-textarea", id: "comment-input-1" %>
-    <%= f.submit t(".comment"), class:"btn btn-info"%>
-
+    <%= f.text_area :content, placeholder: t(".placeholder"), class: "pb-cmnt-textarea-reply", id: "comment-input-1" %>
+    <%= f.submit t(".comment"), class:"btn btn-success" %>
   <% end %>
 </div>

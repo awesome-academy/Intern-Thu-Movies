@@ -1,27 +1,35 @@
-<div class="container" id="watch">
-  <div class="row">
-    <%= video_tag @movie.film_url.to_s, controls: true, id: "watch-film" %>
-  </div>
-</div>
-
-<div class="container" id="comment">
-  <h3><%= t ".comment" %></h3>
-  <div class="card">
+<div class="container-fluid" id="page-wath">
+  <div class="container" id="watch" >
     <div class="row">
-      <div class="col-md-1">
-        <%= image_tag "logo.png", class:"rounded-circle img-comment" %>
-      </div>
-      <div class="col-10 col-md-offset-3">
-          <div class="panel panel-info">
-            <div class="panel-body all-parent">
-              <%= render partial: "comments/form", locals: {commentable: @movie}  %>
-            </div>
-          </div>
-      </div>
+      <%= video_tag @movie.film_url.to_s, controls: true, id: "watch-film" %>
     </div>
+    <div class="row" id="title">
+      <%= link_to @movie.title, movie_path(@movie.slug), class:"text-white font-weight-bold", id: "title-watch" %>
+      <h5 class="text-white" id="year">(<%= @movie.release_date.strftime Settings.movie.date %>)</p>
+      <h5 class="text-white"><%= number_with_delimiter(@movie.view) %></h5>
+      <span class="text-white" id="views"><%= t(".views") %><span>
+    </div>
+  </div>
 
-    <div class="card-body" id="all-parent-cmt" >
-      <%= render partial: "comments/comment", collection: @movie.comments, as: :commentable %>
+  <div class="container" id="comment">
+    <h3 class="text-white"><%= t ".comment" %></h3>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-1">
+          <%= image_tag "icon-logo.jpg", class:"img-comment-first" %>
+        </div>
+        <div class="col-10 col-md-offset-3">
+            <div class="panel panel-info">
+              <div class="panel-body all-parent">
+                <%= render partial: "comments/form", locals: {commentable: @movie}  %>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="card-body" id="all-parent-cmt" >
+        <%= render partial: "comments/comment", collection: @movie.comments, as: :commentable %>
+      </div>
     </div>
   </div>
 </div>

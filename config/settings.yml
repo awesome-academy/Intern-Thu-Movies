@@ -16,6 +16,7 @@ movie:
   overview: 1000
   status_open: 1
   status_lock: 0
+  inc_view_per: 1
 comment: 2
 search: 5
 favorite: 5

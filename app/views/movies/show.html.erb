@@ -1,5 +1,9 @@
-<br>
-<br>
+<div id="redirect">
+  <%= render "shared/redirect"%>
+  <span id="back">
+    <%= link_to @movie.title, movie_path(@movie.slug) %>
+  </span>
+</div>
 <div class="background_preview">
   <div class="row content_img">
     <div class="col-4 d-flex justify-content-center align-items-center">
@@ -14,7 +18,9 @@
       <div class="facts">
         <span><%= @movie.release_date %> - </span>
         <span><%= @movie.genre_name %> - </span>
-        <span><%= @movie.runtime %></span>
+        <span><%= @movie.runtime %> - </span>
+        <span><%= @movie.view %></span>
+        <span><%= t ".views" %></span>
       </div>
 
       <br>
@@ -42,6 +48,29 @@
   </div>
 </div>
 <br>
+
+<div class="container" id="comment">
+  <h3 >Comment</h3>
+  <div class="card">
+    <div class="row">
+      <div class="col-md-1">
+        <%= image_tag "icon-logo.jpg", class:"img-comment-first" %>
+      </div>
+      <div class="col-10 col-md-offset-3">
+          <div class="panel panel-info">
+            <div class="panel-body all-parent">
+              <%= render partial: "comments/form", locals: {commentable: @movie}  %>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="card-body" id="all-parent-cmt" >
+      <%= render partial: "comments/comment", collection: @movie.comments, as: :commentable %>
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid content">
   <h4><b><%= t ".recommendations" %></b></h4>
   <div class="row flex-nowrap">
