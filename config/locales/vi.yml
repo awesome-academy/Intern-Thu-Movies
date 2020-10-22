@@ -41,11 +41,12 @@ vi:
       recommendations: "Đề xuất"
       play_trailer: "Xem trailer"
       play_movie: "Xem phim"
+      views: "Lượt xem"
     watch:
       please_login: "Hãy đăng nhập trước"
       not_found: "Không tìm thấy phim"
-    comment:
-      title: "Bình luận"
+      views: "Lượt xem"
+      comment: "Bình luận"
   shared:
     redirect:
       home: "Trang chủ"
@@ -91,6 +92,8 @@ vi:
         action: ""
         manage_movie: "Quản lý phim"
         total: "Tổng"
+      destroy:
+        movie_deleted: "Đã xóa phim"
       new:
         create_new: "Tạo phim mới"
     layouts:

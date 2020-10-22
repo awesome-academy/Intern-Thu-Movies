@@ -16,10 +16,10 @@ class CommentsController < ApplicationController
 
   def destroy
     if @comment.destroy
-      flash[:success] = t ".cmt_success"
+      flash.now[:success] = t ".success"
       respond_to :js
     else
-      flash[:danger] = t ".error"
+      flash.now[:danger] = t ".error"
       redirect_to root_path
     end
   end

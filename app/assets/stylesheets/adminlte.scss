@@ -196,6 +196,25 @@ table tr td:first-child::before {
     }
   }
 }
+
+/*Page watching*/
+
+#page-wath{
+  background: $black-light;
+  padding-top: 10px;
+
+  #title{
+    margin-top:10px;
+  }
+
+  #year{
+    margin-right: 840px;
+  }
+
+  #views{
+    margin-left: 5px;
+  }
+}
 /*end custom*/
 
 [tabindex="-1"]:focus:not(:focus-visible) {
