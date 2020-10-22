@@ -5,4 +5,8 @@ module MoviesHelper
       content_tag(:span, "☆")
     end
   end
+
+  def option_status_movie
+    Movie.statuses.map{|key, value| [t(".#{key}"), value]}
+  end
 end

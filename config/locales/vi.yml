@@ -70,7 +70,7 @@ vi:
         error_contains: "From có"
     movies:
       lock:
-        success: "Bạn đã khóa phim"
+        success: "Thay đổi trạng thái phim thành công"
         fail: "Khoá thất bại"
       form:
         cancel: "Thoát"
@@ -90,6 +90,7 @@ vi:
         release_date: "Ngày phát hành"
         action: ""
         manage_movie: "Quản lý phim"
+        total: "Tổng"
       new:
         create_new: "Tạo phim mới"
     layouts:
@@ -112,6 +113,10 @@ vi:
       header:
         home: "Trang chủ"
         contact: "Liên hệ"
+        open: "Trạng thái mở"
+        lock_movie: "Trạng thái khóa"
+        search_title: "Tìm phim "
+        search_director: "Tìm đạo diễn"
       sidebar:
         home: "Trang chủ"
         admin: "Admin"

@@ -16,7 +16,19 @@
               <thead>
                 <tr>
                   <th id="stt">#</th>
-                  <th><%= t ".title" %></th>
+                  <th id="title">
+                    <%= t ".title" %>
+                    <span id="sort-asc">
+                      <%= link_to admin_movies_path(sort: "asc"), method: :get, remote: true do %>
+                        <%= fa_icon "sort-asc" %>
+                      <% end %>
+                    </span>
+                    <span id="sort-desc">
+                      <%= link_to admin_movies_path(sort: "desc"), method: :get, remote: true do %>
+                        <%= fa_icon "sort-desc" %>
+                      <% end %>
+                    </span>
+                  </th>
                   <th><%= t ".image" %></th>
                   <th><%= t ".slug" %></th>
                   <th><%= t ".overview" %></th>
@@ -27,12 +39,14 @@
                   <th><%= t ".action" %></th>
                 </tr>
               </thead>
-              <tbody>
+              <h5><%= t ".total" %> :<span id="total-search"><%= @movies.total_count %></span></h5>
+
+              <tbody id="text-search">
                 <%= render @movies %>
               </tbody>
             </table>
             &nbsp;
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center" id="paginate-search" >
              <%= paginate @movies %>
             </div>
           </div>

@@ -3,7 +3,11 @@ class Admin::MoviesController < AdminController
   before_action :load_data, only: %i(index new edit)
 
   def index
-    @movies = Movie.unscoped.page(params[:page]).per Settings.five
+    movies = Movie.unscoped.ordered_by_title(params[:sort])
+    movies = movies.by_title(params[:title])
+                   .by_director(params[:director])
+                   .by_status(params[:status])
+    @movies = movies.page(params[:page]).per Settings.five
   end
 
   def new
