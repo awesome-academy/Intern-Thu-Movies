@@ -42,6 +42,8 @@ en:
       play_trailer: "Play trailer"
       play_movie: "Play movie"
       views: "Views"
+      please_login: "Please login"
+      comment: "Comment"
     watch:
       please_login: "Please log in."
       not_found: "Not found movie"

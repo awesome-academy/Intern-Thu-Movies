@@ -40,6 +40,7 @@ class Movie < ApplicationRecord
   scope :ordered_by_title, (lambda do |order_param|
     order("title #{order_param}") if order_param.present?
   end)
+  scope :ordered_by_view, ->{order(view: :desc)}
   def check_score
     rates.average :score
   end
