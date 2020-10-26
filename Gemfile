@@ -8,6 +8,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap", "~> 4.0"
 gem "carrierwave", "~> 2.0"
 gem "config"
+gem "factory_bot_rails"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.7"
 gem "jquery-rails"
@@ -39,7 +40,12 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "database_cleaner-active_record"
+  gem "faker"
   gem "selenium-webdriver"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
+  gem "simplecov-rcov"
   gem "webdrivers"
 end
 
