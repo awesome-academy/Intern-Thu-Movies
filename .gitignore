@@ -51,3 +51,4 @@ spec/views
 app/assets/images
 /public
 app/views/kaminari
+/coverage

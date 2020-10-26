@@ -7,7 +7,7 @@
     <br>
     <%= form_tag search_index_path, method: "get", class:"search-form form row" do %>
       <label>
-        <%= search_field_tag "movie", nil, class: "search-field", placeholder: t(".search_movies")  %>
+        <%= search_field_tag "movie", nil, class: "search-field", placeholder: t(".search_movies"), autocomplete: "off" %>
       </label>
         <%= submit_tag t(".search"), name: nil, class: "search-submit button" %>
     <% end %>

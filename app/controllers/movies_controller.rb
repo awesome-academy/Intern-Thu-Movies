@@ -1,8 +1,8 @@
 class MoviesController < ApplicationController
-  before_action :logged_in_user, only: :watch
+  before_action :logged_in_user, only: %i(show watch)
 
   def index
-    @movies = Movie.page params[:page]
+    @movies = Movie.ordered_by_view.page params[:page]
   end
 
   def show

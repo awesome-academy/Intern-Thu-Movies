@@ -42,6 +42,8 @@ vi:
       play_trailer: "Xem trailer"
       play_movie: "Xem phim"
       views: "Lượt xem"
+      please_login: "Hãy đăng nhập trước"
+      comment: "Bình luận"
     watch:
       please_login: "Hãy đăng nhập trước"
       not_found: "Không tìm thấy phim"
