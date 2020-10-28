@@ -96,6 +96,7 @@ en:
         total: "Total"
       destroy:
         movie_deleted: "Movie deleted !"
+        fail: "Delete Fail"
       new:
         create_new: "Create new movie"
     layouts:
