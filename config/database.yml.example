@@ -1,6 +1,7 @@
 development:
   adapter: mysql2
-  encoding: utf8
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
   database: movies
   pool: 5
   port: 3306
@@ -9,14 +10,16 @@ development:
   password: thu123
 test:
   adapter: mysql2
-  encoding: utf8
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
   database: movies
   pool: 5
   username: thu
   password: thu123
 production:
   adapter: mysql2
-  encoding: utf8
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
   database: movies
   pool: 5
   username: thu

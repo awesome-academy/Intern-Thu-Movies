@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_10_21_235707) do
 
-  create_table "cast_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "cast_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
     t.bigint "cast_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_235707) do
     t.index ["movie_id"], name: "index_cast_movies_on_movie_id"
   end
 
-  create_table "casts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "casts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "cast_name"
     t.date "birthday"
     t.string "birthplace"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_235707) do
     t.string "avatar"
   end
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_235707) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "favoriate_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "favoriate_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
     t.bigint "user_id", null: false
     t.integer "typelike", default: 0
@@ -52,13 +52,13 @@ ActiveRecord::Schema.define(version: 2020_10_21_235707) do
     t.index ["user_id"], name: "index_favoriate_movies_on_user_id"
   end
 
-  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "genre_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "title"
     t.string "image"
     t.string "background"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_235707) do
     t.index ["view"], name: "index_movies_on_view"
   end
 
-  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "score"
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_235707) do
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "avatar"

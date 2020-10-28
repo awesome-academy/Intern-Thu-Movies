@@ -44,10 +44,7 @@ yarn-debug.log*
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
-spec/helpers/
-spec/models/
-spec/requests/
-spec/views
+
 app/assets/images
 /public
 app/views/kaminari
