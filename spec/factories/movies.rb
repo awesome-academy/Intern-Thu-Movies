@@ -9,6 +9,5 @@ FactoryBot.define do
     genre {FactoryBot.create :genre}
     overview {Faker::Lorem.sentence(word_count: 10)}
     trailer {"youtube"}
-    status {"open"}
   end
 end
