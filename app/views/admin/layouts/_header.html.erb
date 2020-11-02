@@ -13,22 +13,6 @@
     </li>
   </ul>
 
-  <div class="row" id="search-box">
-    <%= form_tag admin_movies_path, method: "get", remote: true do %>
-      <div class="input-group input-group-sm">
-        <%= text_field_tag :title, nil, class:"form-control form-control-navbar", placeholder: t(".search_title") %>
-        <%= text_field_tag :director, nil, class:"form-control form-control-navbar", placeholder: t(".search_director") %>
-        <%= select_tag "status", options_for_select(option_status_movie), {include_blank: true,class: "form-control"} %>
-
-        <div class="input-group-append">
-          <%= button_tag(type: "submit", class: "btn btn-info") do %>
-            <%= fa_icon "search" %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
   <div class="logo-img">
     <%= link_to locale: :vi do %>
       <%= image_tag "flag_vn.jpg" %>

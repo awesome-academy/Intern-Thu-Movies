@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @movies = Movie.page.by_title(params[:movie]).per Settings.search
+    @q = Movie.ransack params[:q]
+    @movies = @q.result.page(params[:page]).per Settings.five
   end
 end

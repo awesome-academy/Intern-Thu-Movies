@@ -175,20 +175,31 @@ table tr td:first-child::before {
 }
 
 #search-box{
-  margin-left:30px;
+  margin-left:5px;
+  margin-bottom: 15px;
 
   form {
+    label{
+      margin-left:15px;
+    }
+
     input{
       padding: 20px;
+      width: 300px;
       margin-left: 15px;
       background: $white;
       border: 1px solid $black;
     }
+
+    .created_at{
+      height:42px;
+      width:200px;
+    }
+    
     select{
-      margin: 0 5px 0 15px;
-      height: 41px;
-      width: 10px;
-       border: 1px solid $black;
+      margin: 0 5px 0 5px;
+      background-color: $white;
+      border: 1px solid $black;
     }
 
     button{
@@ -205,6 +216,7 @@ table tr td:first-child::before {
 
   #title{
     margin-top:10px;
+    color:$black-light;
   }
 
   #year{
@@ -214,6 +226,14 @@ table tr td:first-child::before {
   #views{
     margin-left: 5px;
   }
+}
+
+.sort_link {
+  color: $black;
+}
+
+#release_date{
+  width:150px;
 }
 /*end custom*/
 

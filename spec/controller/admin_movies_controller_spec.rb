@@ -30,7 +30,7 @@ RSpec.describe Admin::MoviesController, type: :controller do
       before {delete :destroy, params: {id: movie_test.id}}
       it {expect(response).to redirect_to root_path}
     end
-    
+
     describe "PATCH #lock" do
       before {patch :lock, params: {id: movie_test.id}}
       it {expect(response).to redirect_to root_path}

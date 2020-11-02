@@ -1,3 +1,18 @@
+<div class="row" id="search-box" >
+  <%= search_form_for @q, url: admin_movies_path, method: :get, remote: true do |f| %>
+    <div class="input-group input-group-sm">
+      <%= f.label :created_at_date %>
+      <%= f.search_field :created_at_date_equals, type: "date", class: "created_at" %>
+      <%= f.search_field :info_movie_cont, class:"form-control", placeholder: t(".info_movie") %>
+      <%= f.select :status_eq, options_for_select(option_status_movie), {include_blank: t(".all"), class: "form-control"} %>
+
+      <%= button_tag(type: "submit", class: "btn btn-info") do %>
+        <%= fa_icon "search" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
 <section class="content">
   <div class="container-fluid">
     <div class="row">
@@ -17,17 +32,7 @@
                 <tr>
                   <th id="stt">#</th>
                   <th id="title">
-                    <%= t ".title" %>
-                    <span id="sort-asc">
-                      <%= link_to admin_movies_path(sort: "asc"), method: :get, remote: true do %>
-                        <%= fa_icon "sort-asc" %>
-                      <% end %>
-                    </span>
-                    <span id="sort-desc">
-                      <%= link_to admin_movies_path(sort: "desc"), method: :get, remote: true do %>
-                        <%= fa_icon "sort-desc" %>
-                      <% end %>
-                    </span>
+                    <%= sort_link @q, :title %>
                   </th>
                   <th><%= t ".image" %></th>
                   <th><%= t ".slug" %></th>
@@ -35,7 +40,9 @@
                   <th><%= t ".genre" %></th>
                   <th><%= t ".runtime" %></th>
                   <th><%= t ".director" %></th>
-                  <th><%= t ".release_date" %></th>
+                  <th id="release_date">
+                    <%= sort_link @q, :release_date %>
+                  </th>
                   <th><%= t ".action" %></th>
                 </tr>
               </thead>

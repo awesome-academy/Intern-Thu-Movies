@@ -94,6 +94,8 @@ en:
         action: "Action"
         manage_movie: "Manage movie"
         total: "Total"
+        info_movie: "Search title,director,genre..."
+        all: "ALL"
       destroy:
         movie_deleted: "Movie deleted !"
         fail: "Delete Fail"
@@ -121,8 +123,6 @@ en:
         contact: "Contact"
         open: "Status Open"
         lock_movie: "Status Lock"
-        search_title: "Search Title"
-        search_director: "Search Director"
       sidebar:
         home: "Home"
         admin: "Admin"

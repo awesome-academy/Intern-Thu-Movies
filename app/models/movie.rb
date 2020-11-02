@@ -26,6 +26,21 @@ class Movie < ApplicationRecord
   mount_uploader :background, BackgroundUploader
 
   delegate :genre_name, to: :genre
+
+  ransack_alias :info_movie, :title_or_director_or_genre_genre_name
+
+  def self.ransackable_attributes auth_object = nil
+    if auth_object == :admin
+      super
+    else
+      super & %w(info_movie)
+    end
+  end
+
+  ransacker :created_at do
+    Arel.sql("date(created_at)")
+  end
+
   default_scope{where(status: Settings.movie.status_open)}
   scope :by_title, (lambda do |title|
     where("title LIKE ?", "%#{title}%") if title.present?
@@ -39,6 +54,7 @@ class Movie < ApplicationRecord
     order("title #{order_param}") if order_param.present?
   end)
   scope :ordered_by_view, ->{order(view: :desc)}
+  scope :ordered_by_create, ->{order(created_at: :desc)}
   def check_score
     rates.average :score
   end

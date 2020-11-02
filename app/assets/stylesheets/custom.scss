@@ -578,14 +578,13 @@ input.search-submit {
   height: 25px; margin-top: 7px;
 
   label{
-
     input{
-    width: 1000px;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    color: $text-search;
-    font-style: italic;
+      width: 1050px;
+      border: none;
+      outline: none;
+      font-size: 13px;
+      color: $text-search;
+      font-style: italic;
     }
   }
 }
