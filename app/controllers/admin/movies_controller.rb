@@ -3,11 +3,9 @@ class Admin::MoviesController < AdminController
   before_action :load_data, only: %i(index new edit)
 
   def index
-    movies = Movie.unscoped.ordered_by_title(params[:sort])
-    movies = movies.by_title(params[:title])
-                   .by_director(params[:director])
-                   .by_status(params[:status])
-    @movies = movies.page(params[:page]).per Settings.five
+    @q = Movie.unscoped.ordered_by_create
+              .search params[:q], auth_object: set_ransack_auth_object
+    @movies = @q.result.includes(:genre).page(params[:page]).per Settings.five
   end
 
   def new
@@ -67,5 +65,9 @@ class Admin::MoviesController < AdminController
 
   def load_data
     @genre = Genre.all
+  end
+
+  def set_ransack_auth_object
+    :admin if current_user.admin?
   end
 end

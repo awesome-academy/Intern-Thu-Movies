@@ -5,11 +5,11 @@
       <h3 class="text-white font-weight-bold"><%= t ".introduce" %></h3>
     </div>
     <br>
-    <%= form_tag search_index_path, method: "get", class:"search-form form row" do %>
+    <%= search_form_for @q, url: search_index_path, html: {method: :get, class:"search-form form row"} do |f| %>
       <label>
-        <%= search_field_tag "movie", nil, class: "search-field", placeholder: t(".search_movies"), autocomplete: "off" %>
+        <%= f.search_field :info_movie_cont, class: "search-field", placeholder: t(".search_movies"), autocomplete: "off" %>
       </label>
-        <%= submit_tag t(".search"), name: nil, class: "search-submit button" %>
+      <%= submit_tag t(".search"), name: nil, class: "search-submit button" %>
     <% end %>
     <br>
   </div>

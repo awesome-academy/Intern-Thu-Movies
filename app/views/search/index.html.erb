@@ -1,9 +1,9 @@
 <div class="container" id="new-form-search">
-  <%= form_tag search_index_path, method: "get" do %>
-  <label>
-    <%= fa_icon "search" %>
-    <%= text_field_tag :movie, params[:movie] %>
-  </label>
+  <%= search_form_for @q, url: search_index_path, html: {method: :get} do |f| %>
+    <label>
+      <%= fa_icon "search" %>
+      <%= f.search_field :info_movie_cont, value: params[:q][:info_movie_cont] %>
+    </label>
   <% end %>
 </div>
 

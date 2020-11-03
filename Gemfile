@@ -17,6 +17,7 @@ gem "mysql2"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "rails-i18n"
+gem "ransack"
 gem "sass-rails", ">= 6"
 gem "toastr-rails"
 gem "turbolinks", "~> 5"
@@ -43,12 +44,12 @@ group :test do
   gem "database_cleaner-active_record"
   gem "execjs"
   gem "faker"
+  gem "mini_racer"
   gem "rails-controller-testing"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "simplecov-rcov"
-  gem "therubyracer"
   gem "webdrivers"
 end
 

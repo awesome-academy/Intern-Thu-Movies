@@ -94,6 +94,8 @@ vi:
         action: ""
         manage_movie: "Quản lý phim"
         total: "Tổng"
+        info_movie: "Tìm đạo diễn,thể loại phim..."
+        all: "Tất cả"
       destroy:
         movie_deleted: "Đã xóa phim"
       new:
@@ -120,8 +122,6 @@ vi:
         contact: "Liên hệ"
         open: "Trạng thái mở"
         lock_movie: "Trạng thái khóa"
-        search_title: "Tìm phim "
-        search_director: "Tìm đạo diễn"
       sidebar:
         home: "Trang chủ"
         admin: "Admin"
