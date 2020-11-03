@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :logged_in_user, only: %i(show watch)
+  before_action :authenticate_user!, only: :watch
 
   def index
     @q = Movie.ransack params[:q]

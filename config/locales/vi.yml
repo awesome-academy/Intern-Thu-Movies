@@ -52,20 +52,19 @@ vi:
   shared:
     redirect:
       home: "Trang chủ"
-    error_mesages:
+    error_messages:
       error: "Lỗi"
       error_contains: "Form chứa lỗi"
-  sessions:
-    new:
-      login: "Đăng nhập"
-      sign_up_now: "Đăng ký ngay"
-    create:
-      error: "Lỗi"
   users:
-    new:
-      signup: "Đăng ký"
-      welcome: "Chào mừng đến với Website Movies !"
-      error: "Lỗi"
+    registrations:
+      new:
+        sign_up: "Đăng Ký"
+        welcome: "Chào mừng đến vớiWebsite Movies !"
+        error: "Lỗi"
+    sessions:
+      new:
+        login: "Đăng ký"
+        sign_up_now: "Đăng ký ngay"
   admin:
     shared:
       error_messages:

@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if user_signed_in? %>
   <% if current_user.rated? @movie %>
     <%= link_to rate_path(@movie,movie_id: @movie.id), method: :delete, remote: true do %>
       <%= fa_icon "star", id: "star-rated-color" %>

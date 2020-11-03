@@ -1,5 +1,4 @@
 class RatesController < ApplicationController
-  before_action :logged_in_user, only: :create
   before_action :find_movie, only: %i(create destroy)
   before_action :find_movie_rated, only: :destroy
 
