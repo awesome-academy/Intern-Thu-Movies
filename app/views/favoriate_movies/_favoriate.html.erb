@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if user_signed_in? %>
   <% if current_user.liked? @movie, Settings.enum_favoriate %>
     <%= form_tag favoriate_movie_path(@movie), method: :delete, remote: true do |f| %>
       <%= hidden_field_tag :movie_id, @movie.id %>

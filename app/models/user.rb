@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = Settings.user.email.regex
   USER_PERMIT = %i(name email password password_confirmation).freeze
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   has_many :favoriate_movies, dependent: :destroy
   has_many :movies, through: :favoriate_movies
 
@@ -20,8 +24,6 @@ class User < ApplicationRecord
              length: {minimum: Settings.user.password.minimum}
 
   before_save :downcase_email
-
-  has_secure_password
 
   def liked? movie, typelike
     favoriate_movies.by_movie_id(movie.id).by_typelike_id(typelike).exists?

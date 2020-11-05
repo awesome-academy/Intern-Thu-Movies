@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include SessionsHelper
   include MoviesHelper
 
   before_action :set_locale

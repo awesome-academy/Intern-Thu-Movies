@@ -38,7 +38,7 @@ RSpec.describe Admin::MoviesController, type: :controller do
   end
 
   context "When admin login" do
-    before {log_in admin_user}
+    before {sign_in admin_user}
 
     describe "GET #index" do
       before {get :index}

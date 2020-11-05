@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
+    devise_for :users, controllers: {
+      registrations: "users/registrations",
+      sessions: "users/sessions"
+    }
+
     root "movies#index"
     get "/movies/:slug", to: "movies#show", as: :movie
     get "/movies/watch/:slug", to: "movies#watch", as: :watch
@@ -16,11 +21,6 @@ Rails.application.routes.draw do
     resources :comments do
       resources :comments, only: %i(create destroy)
     end
-
-    resource :users
-    get "/login", to: "sessions#new", as: :login
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
 
     namespace :admin do
       root "dashboards#index"

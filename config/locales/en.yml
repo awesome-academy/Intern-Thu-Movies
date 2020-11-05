@@ -52,20 +52,19 @@ en:
   shared:
     redirect:
       home: "Home"
-    error_mesages:
+    error_messages:
       error: "Error"
       error_contains: "The form contains"
-  sessions:
-    new:
-      login: "Login"
-      sign_up_now: "Sign up now"
-    create:
-      error: "Error"
   users:
-    new:
-      signup: "Sign Up"
-      welcome: "Welcome to the Website Movies !"
-      error: "Error"
+    registrations:
+      new:
+        sign_up: "Sign Up"
+        welcome: "Welcome to the Website Movies !"
+        error: "Error"
+    sessions:
+      new:
+        login: "Login"
+        sign_up_now: "Sign up now"
   admin:
     shared:
       error_messages:
