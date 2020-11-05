@@ -64,7 +64,7 @@ vi:
     sessions:
       new:
         login: "Đăng ký"
-        sign_up_now: "Đăng ký ngay"
+        continue_google: "Tiếp tục với Google"
   admin:
     shared:
       error_messages:

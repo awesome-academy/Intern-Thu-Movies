@@ -49,3 +49,5 @@ app/assets/images
 /public
 app/views/kaminari
 /coverage
+
+/config/application.yml

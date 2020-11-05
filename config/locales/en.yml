@@ -64,7 +64,7 @@ en:
     sessions:
       new:
         login: "Login"
-        sign_up_now: "Sign up now"
+        continue_google: "Continue with Google"
   admin:
     shared:
       error_messages:

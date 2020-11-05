@@ -108,6 +108,22 @@ nav .login ul li a img{
   content: ' *';
 }
 
+.login-google{
+
+  i{
+    color:$red;
+    font-size:25px;
+  }
+
+  a{
+    color: $black;
+    font-weight:900;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
 /*List movie*/
 .content {
   max-width: 90%;
