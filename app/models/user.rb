@@ -3,7 +3,7 @@ class User < ApplicationRecord
   USER_PERMIT = %i(name email password password_confirmation).freeze
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
+         :recoverable, :rememberable, :validatable, :lockable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :favoriate_movies, dependent: :destroy
@@ -39,6 +39,7 @@ class User < ApplicationRecord
     User.where(email: data["email"])
         .first_or_create(name: data["name"],
                         email: data["email"],
+                        avatar: data["image"],
                         password: Devise.friendly_token[0, 20],
                         provider: access_token[:provider],
                         uid: access_token[:uid])

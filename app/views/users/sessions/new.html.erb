@@ -27,7 +27,8 @@
             <%= link_to t(".continue_google"), user_google_oauth2_omniauth_authorize_path %>
           </div>
           <br>
-          <%= f.submit t(".login"), class: "btn btn-info font-weight-bold" %>
+          <%= f.submit t(".login"), class: "btn btn-info font-weight-bold" %><br><br>
+          <%= link_to t(".forgot_psw"), new_password_path(resource_name), class: "text-center" %>
         </div>
       <% end %>
     </div>

@@ -1,0 +1,19 @@
+<div class="container form-login">
+  <div class="row d-flex justify-content-center">
+    <br>
+    <div class="col-6 form-sign-up">
+      <h2><%= t ".forgot_psw" %></h2>
+      <%= form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post } do |f| %>
+        <div class="field">
+          <%= f.label :email, class: "control-label-required" %><br>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          <%= display_error f.object, :password %>
+        </div>
+        <div class="actions text-center text-bold">
+          <br>
+          <%= f.submit t(".send"), class: "btn btn-info font-weight-bold" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

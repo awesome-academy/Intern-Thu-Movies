@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     devise_for :users, skip: :omniauth_callbacks, controllers: {
       registrations: "users/registrations",
-      sessions: "users/sessions"
+      sessions: "users/sessions",
+      passwords: "users/passwords"
     }
 
     root "movies#index"

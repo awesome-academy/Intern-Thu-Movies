@@ -62,9 +62,14 @@
       <ul>
         <li class="nav-item dropdown">
           <%= link_to "#", class: "nav-link font-weight-bold", data: {toggle: "dropdown"} do %>
-            <%= image_tag "icon-logo.jpg" %>
+            <% if current_user.avatar.blank? %>
+              <%= image_tag "icon-logo.jpg" %>
+            <% else %>
+              <%= image_tag current_user.avatar %>
+            <% end %>
           <% end %>
           <div class="dropdown-menu">
+            <%= link_to current_user.email, "#", class: "dropdown-item" %>
             <%= link_to t(".profile"), "#", class: "dropdown-item" %>
             <%= link_to t(".favorite-movies"),favoriate_movies_path, class: "dropdown-item" %>
             <%= link_to t(".watch-later"), bookmark_movies_path, class: "dropdown-item" %>
