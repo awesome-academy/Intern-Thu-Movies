@@ -56,6 +56,14 @@ vi:
       error: "Lỗi"
       error_contains: "Form chứa lỗi"
   users:
+    passwords:
+      new:
+        forgot_psw: "Quên mật khẩu ?"
+        send: "Gửi hướng dẫn đặt lại mật khẩu"
+      edit:
+        change_my_password: "Thay đổi mật khẩu"
+        new_password: "Mật khẩu mới"
+        confirm_new_password: "Xác nhận mật khẩu mới"
     registrations:
       new:
         sign_up: "Đăng Ký"
@@ -65,6 +73,7 @@ vi:
       new:
         login: "Đăng ký"
         continue_google: "Tiếp tục với Google"
+        forgot_psw: "Quên mật khẩu ?"
   admin:
     shared:
       error_messages:
