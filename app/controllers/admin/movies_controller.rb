@@ -46,6 +46,7 @@ class Admin::MoviesController < AdminController
 
   def lock
     if @movie.update status: params[:status]
+      UserWorker.perform_async @movie.id
       flash[:success] = t ".success"
     else
       flash[:danger] = t ".fail"

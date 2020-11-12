@@ -188,3 +188,7 @@ vi:
     destroy:
       success: "Đã xóa đánh giá của bạn"
       failed: "Đánh giá thất bại"
+  user_mailer:
+    send_mail:
+      notification: "Thông báo !"
+      change: "Thay đổi trạng thái phim : "
