@@ -21,6 +21,7 @@ gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "rails-i18n"
 gem "ransack"
 gem "sass-rails", ">= 6"
+gem "sidekiq"
 gem "toastr-rails"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
@@ -35,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+
   gem "listen", "~> 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"

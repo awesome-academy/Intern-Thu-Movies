@@ -121,16 +121,6 @@ RSpec.describe Admin::MoviesController, type: :controller do
     end
 
     describe "PATCH #lock" do
-      context "when valid params" do
-        before do
-          patch :lock, params: {id: movie_test.id, status: "lock_movie"}, xhr: true
-        end
-
-        it "should correct status" do
-          expect(assigns(:movie).status).to eq "lock_movie"
-        end
-      end
-
       context "when invalid params" do
         before do
           patch :lock, params: {id: movie_test.id, status: nil}, xhr: true
