@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_user!, only: :watch
+  load_and_authorize_resource
 
   def index
     @q = Movie.ransack params[:q]
@@ -19,6 +19,11 @@ class MoviesController < ApplicationController
     return if @movie
 
     flash[:danger] = t ".not_found"
+    redirect_to root_path
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:alert] = exception.message
     redirect_to root_path
   end
 end

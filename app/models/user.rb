@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   has_many :rates, dependent: :destroy
 
-  enum role: {user: 0, admin: 1}
+  enum role: {normal: 0, premium: 1, admin: 2}
 
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum}
 

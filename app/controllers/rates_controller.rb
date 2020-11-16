@@ -1,4 +1,5 @@
 class RatesController < ApplicationController
+  load_and_authorize_resource
   before_action :find_movie, only: %i(create destroy)
   before_action :find_movie_rated, only: :destroy
 

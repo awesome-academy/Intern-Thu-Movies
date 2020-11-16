@@ -5,6 +5,7 @@ ruby "2.7.1"
 
 gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap", "~> 4.0"
+gem "cancancan"
 gem "carrierwave", "~> 2.0"
 gem "config"
 gem "devise"
@@ -36,7 +37,6 @@ group :development, :test do
 end
 
 group :development do
-
   gem "listen", "~> 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
