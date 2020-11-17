@@ -1,10 +1,8 @@
 class AdminController < ApplicationController
-  before_action :check_admin?
+  authorize_resource User
   layout "admin"
 
-  private
-
-  def check_admin?
-    redirect_to root_path unless current_user&.admin?
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path, alert: exception.message
   end
 end

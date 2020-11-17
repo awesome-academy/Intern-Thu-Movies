@@ -1,4 +1,5 @@
 class FavoriateMoviesController < ApplicationController
+  load_and_authorize_resource
   before_action :find_movie, only: %i(create destroy)
   before_action :find_favoriate_movie, only: :destroy
 

@@ -1,4 +1,5 @@
 class Admin::MoviesController < AdminController
+  authorize_resource
   before_action :find_movie, except: %i(index create new)
   before_action :load_data, only: %i(index new edit)
 
