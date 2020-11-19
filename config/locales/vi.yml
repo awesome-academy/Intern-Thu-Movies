@@ -112,6 +112,10 @@ vi:
         movie_deleted: "Đã xóa phim"
       new:
         create_new: "Tạo phim mới"
+    notifications:
+      index:
+        title: "Thông báo của bạn"
+        mark_all: "Đánh dấu tất cả là đã đọc"
     layouts:
       movies:
         read:
@@ -134,6 +138,8 @@ vi:
         contact: "Liên hệ"
         open: "Trạng thái mở"
         lock_movie: "Trạng thái khóa"
+        notifications: "Thống báo"
+        see_all: "Xem tất cả thống báo"
       sidebar:
         home: "Trang chủ"
         admin: "Admin"
@@ -145,6 +151,9 @@ vi:
         copyright: "Copyright"
         year: "2014-2019"
         admin: "AdminLTE.io"
+      notification:
+        account: "Tài khoản"
+        upgraded: "đã nâng cấp "
   comments:
     destroy:
       cmt_success: "Xóa thành công"
@@ -202,3 +211,5 @@ vi:
       not_found: "Không tìm thấy"
       error: "Lỗi"
       upgraded: "Tài khoản của bạn được nâng cấp thành công!"
+  notification:
+    upgade_account: "nâng cấp thành công"

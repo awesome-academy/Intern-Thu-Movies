@@ -35,8 +35,10 @@ Rails.application.routes.draw do
       resources :movies do
         patch "lock", on: :member
       end
+      resources :notifications do
+        post "read_all", on: :collection
+      end
     end
-
     match "*unmatched", to: "application#rescue_404_exception", via: :all
   end
 end

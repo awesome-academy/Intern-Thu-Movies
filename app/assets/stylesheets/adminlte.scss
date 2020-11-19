@@ -235,6 +235,33 @@ table tr td:first-child::before {
 #release_date{
   width:150px;
 }
+
+/*notification*/
+
+.new-notification{
+  background-color: $notification;
+}
+
+.notify-list{
+
+  .container{
+    background-color: $white;
+    height: 470px;
+    padding-bottom:15px;
+    
+    .header{
+      margin-bottom: 20px;
+
+      span{
+        font-size:25px;
+      }
+
+      a{
+        float: right;
+      }
+    }
+  }
+}
 /*end custom*/
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -13607,7 +13634,7 @@ body.text-sm .control-sidebar {
 .dropdown-menu-lg {
   max-width: 300px;
   min-width: 280px;
-  padding: 0;
+  padding: 10px;
 }
 
 .dropdown-menu-lg .dropdown-divider {

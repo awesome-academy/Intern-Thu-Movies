@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_035122) do
+ActiveRecord::Schema.define(version: 2020_11_23_032713) do
 
   create_table "cast_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(version: 2020_11_19_035122) do
     t.index ["view"], name: "index_movies_on_view"
   end
 
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "score"
     t.bigint "user_id", null: false
@@ -122,6 +131,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_035122) do
   add_foreign_key "favoriate_movies", "movies"
   add_foreign_key "favoriate_movies", "users"
   add_foreign_key "movies", "genres"
+  add_foreign_key "notifications", "users"
   add_foreign_key "rates", "movies"
   add_foreign_key "rates", "users"
 end

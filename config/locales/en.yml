@@ -113,6 +113,10 @@ en:
         fail: "Delete Fail"
       new:
         create_new: "Create new movie"
+    notifications:
+      index:
+        title: "Your notification"
+        mark_all: "Mark all as read"
     layouts:
       movies:
         read:
@@ -135,6 +139,8 @@ en:
         contact: "Contact"
         open: "Status Open"
         lock_movie: "Status Lock"
+        notifications: "Notifications"
+        see_all: "See All Notifications"
       sidebar:
         home: "Home"
         admin: "Admin"
@@ -146,6 +152,9 @@ en:
         copyright: "Copyright"
         year: "2014-2019"
         admin: "AdminLTE.io"
+      notification:
+        account: "Account"
+        upgraded: "has been upgraded"
   comments:
     destroy:
       success: "Delete success"
@@ -203,3 +212,5 @@ en:
       not_found: "Not found"
       error: "Error"
       upgraded: "Your account has been successfully upgraded !"
+  notification:
+    upgraded: "successfully upgraded"

@@ -1,0 +1,18 @@
+<section class="notify-list">
+  <div class="container">
+    <div class="header">
+      <span><%= t ".title" %></span>
+      <%= link_to read_all_admin_notifications_path, method: :post, class:"btn btn-success" do %>
+        <%= t ".mark_all" %>
+      <% end %>
+    </div>
+    <div id="all_notifications">
+      <%= render partial: "admin/layouts/notification", collection: @notification %>
+    </div>
+  </div>
+  <div>
+    <div class="d-flex justify-content-center" id="paginate-notify">
+      <%= paginate @notification %>
+    </div>
+  </div>
+</section>
