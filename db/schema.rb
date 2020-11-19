@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_064354) do
+ActiveRecord::Schema.define(version: 2020_11_19_035122) do
 
   create_table "cast_movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "movie_id", null: false
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_11_05_064354) do
     t.datetime "locked_at"
     t.string "provider"
     t.string "uid"
+    t.integer "money", default: 0
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true

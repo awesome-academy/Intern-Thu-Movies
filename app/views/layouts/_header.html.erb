@@ -5,7 +5,7 @@
     </div>
   </div>
 
-  <div class="collapse navbar-collapse col-6" id="navbarsExampleDefault">
+  <div class="collapse navbar-collapse col-5" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <%= link_to "#", class: "nav-link font-weight-bold",
@@ -47,7 +47,18 @@
     </ul>
   </div>
 
-  <div class="col-3 d-flex justify-content-end login">
+  <div class="col-4 d-flex justify-content-end login">
+    <% if user_signed_in? %>
+      <% if current_user.premium? || current_user.admin? %>
+        <%= image_tag "premium.jpeg", id:"logo-premium" %>
+      <% else %>
+        <%= link_to "", data: {toggle: "modal", target: "#Modal"},
+                        class: "font-weight-bold text-warning" do %>
+          <%= t ".upgrade_account" %>
+        <% end %>
+      <% end %>
+    <% end %>
+    &nbsp;
     <%= link_to locale: :vi do %>
       <%= image_tag "flag_vn.jpg" %>
     <% end %>
@@ -55,7 +66,7 @@
     <%= link_to locale: :en do %>
       <%= image_tag "flag_uk.png" %>
     <% end %>
-   </div>
+  </div>
 
   <div class="col-2 d-flex justify-content-start login">
     <% if user_signed_in? %>
@@ -83,3 +94,16 @@
     <% end %>
   </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <h5 class="font-weight-bold"><%= t ".upgrading" %></h5>
+          <%= link_to t(".accept"), upgrade_account_path(current_user), method: :patch, class: "btn btn-success" %>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
+  </div>
+</div>

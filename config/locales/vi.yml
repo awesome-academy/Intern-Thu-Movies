@@ -21,6 +21,10 @@ vi:
       favorite-movies: "Phim yêu thích"
       watch-later: "Xem sau"
       logout: "Đăng xuất"
+      upgrade_account: "Nâng cấp tài khoản"
+      upgrading: "Nâng cấp lên tài khoản premium với ($10)"
+      close: "Đóng"
+      accept: "Chấp nhận"
   movies:
     score:
       ratings: "Đánh giá"
@@ -192,3 +196,9 @@ vi:
     send_mail:
       notification: "Thông báo !"
       change: "Thay đổi trạng thái phim : "
+  upgrade_accounts:
+    update:
+      error_money: "Bạn không đủ tiền"
+      not_found: "Không tìm thấy"
+      error: "Lỗi"
+      upgraded: "Tài khoản của bạn được nâng cấp thành công!"

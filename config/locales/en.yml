@@ -21,6 +21,10 @@ en:
       favorite-movies: "Favorite Movies"
       watch-later: "Watch Later"
       logout: "Logout"
+      upgrade_account: "Upgrade Account"
+      upgrading: "Upgrading to Paid Account ($10)"
+      close: "Close"
+      accept: "Accept"
   movies:
     score:
       ratings: "Ratings"
@@ -193,3 +197,9 @@ en:
     send_mail:
       notification: "Notification !"
       change: "Change status movie : "
+  upgrade_accounts:
+    update:
+      error_money: "You don't have enough money"
+      not_found: "Not found"
+      error: "Error"
+      upgraded: "Your account has been successfully upgraded !"
