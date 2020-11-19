@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       sessions: "users/sessions",
       passwords: "users/passwords"
     }
+    resources :upgrade_accounts, only: :update
 
     root "movies#index"
     get "/movies/:slug", to: "movies#show", as: :movie
