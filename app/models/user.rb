@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   has_many :rates, dependent: :destroy
 
+  has_many :notifications, dependent: :destroy
+
   enum role: {normal: 0, premium: 1, admin: 2}
 
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum}
@@ -27,6 +29,8 @@ class User < ApplicationRecord
              allow_blank: true
 
   before_save :downcase_email
+
+  after_update :create_notification
 
   def liked? movie, typelike
     favoriate_movies.by_movie_id(movie.id).by_typelike_id(typelike).exists?
@@ -51,5 +55,20 @@ class User < ApplicationRecord
 
   def downcase_email
     email.downcase!
+  end
+
+  def create_notification
+    notify = notifications.build content: I18n.t(".notification.upgraded")
+    notify.save
+
+    notification = Notification.unread.ordered_by_create
+    notify_html = AdminController.render(partial: "admin/layouts/notification",
+                                         collection: notification,
+                                         formats: [:html])
+    User.admin.each do |admin|
+      ActionCable.server.broadcast("notifications_channel_#{admin.id}",
+                                   notify: notify_html,
+                                   count: Notification.unread.count)
+    end
   end
 end

@@ -2,6 +2,7 @@ class Admin::MoviesController < AdminController
   authorize_resource
   before_action :find_movie, except: %i(index create new)
   before_action :load_data, only: %i(index new edit)
+  before_action :load_notify, only: :index
 
   def index
     @q = Movie.unscoped.ordered_by_create
@@ -67,6 +68,11 @@ class Admin::MoviesController < AdminController
 
   def load_data
     @genre = Genre.all
+  end
+
+  def load_notify
+    @notification = Notification.unread.ordered_by_create
+                                .page(params[:page]).per Settings.five
   end
 
   def set_ransack_auth_object

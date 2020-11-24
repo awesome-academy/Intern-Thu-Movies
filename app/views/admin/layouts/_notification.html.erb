@@ -1,0 +1,32 @@
+<% if notification.unread? %>
+  <div class="new-notification">
+    <small>
+      <%= fa_icon "id-badge", class: "text-danger" %>
+      <%= t ".account" %>
+      <span class="font-weight-bold text-info">
+        <%= notification.email %>
+      </span>
+      <%= t ".upgraded" %>
+      <span class="float-right text-muted text-sm">
+          <%= time_ago_in_words notification.created_at %>
+      </span>
+      <div class="dropdown-divider"></div>
+    </small>
+  </div>
+<% else %>
+  <div>
+    <small>
+      <%= fa_icon "id-badge", class: "text-success" %>
+      <%= t ".account" %>
+      <span class="font-weight-bold text-info">
+        <%= notification.email %>
+      </span>
+      <%= t ".upgraded" %>
+
+      <span class="float-right text-muted text-sm">
+          <%= time_ago_in_words notification.created_at %>
+      </span>
+      <div class="dropdown-divider"></div>
+    </small>
+  </div>
+<% end %>

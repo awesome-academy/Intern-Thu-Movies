@@ -13,7 +13,33 @@
     </li>
   </ul>
 
-  <div class="logo-img">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link" data-toggle="dropdown" href="#">
+        <input type="hidden" id="admin_id" value="<%= current_user.id %>"></input>
+        <i class="fa fa-bell-o"></i>
+        <span class="badge badge-warning navbar-badge" id="cotification_count">
+          <%= @notification.unread.total_count %>
+        </span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <span class="dropdown-item dropdown-header">
+          <%= @notification.unread.total_count %>
+          <%= t ".notifications" %>
+        </span>
+
+        <div id="notifications_list">
+          <%= render partial: "admin/layouts/notification", collection: @notification %>
+        </div>
+        <div class="dropdown-divider"></div>
+        <%= link_to admin_notifications_path, class: "dropdown-item" do %>
+          <small><%= t ".see_all" %></small>
+        <% end %>
+      </div>
+    </li>
+  </ul>
+
+  <div class="logo-img" style="right:60px;">
     <%= link_to locale: :vi do %>
       <%= image_tag "flag_vn.jpg" %>
     <% end %>

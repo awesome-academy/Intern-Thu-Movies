@@ -100,9 +100,11 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
+       <% if user_signed_in? %>
           <h5 class="font-weight-bold"><%= t ".upgrading" %></h5>
           <%= link_to t(".accept"), upgrade_account_path(current_user), method: :patch, class: "btn btn-success" %>
           <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
+        <% end %>
       </div>
     </div>
   </div>
