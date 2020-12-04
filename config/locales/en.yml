@@ -90,6 +90,9 @@ en:
       form:
         cancel: "Cancel"
         save: "Save"
+        add_cast: "ADD CAST"
+      cast_field:
+        remove: "Remove"
       movie:
         sure: "Are you sure?"
       index:

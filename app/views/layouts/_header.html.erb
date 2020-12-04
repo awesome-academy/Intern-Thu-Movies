@@ -94,16 +94,3 @@
     <% end %>
   </div>
 </nav>
-
-<!-- Modal -->
-<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-          <h5 class="font-weight-bold"><%= t ".upgrading" %></h5>
-          <%= link_to t(".accept"), upgrade_account_path(current_user), method: :patch, class: "btn btn-success" %>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
-      </div>
-    </div>
-  </div>
-</div>

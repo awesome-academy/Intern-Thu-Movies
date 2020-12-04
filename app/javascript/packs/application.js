@@ -9,6 +9,7 @@ require('@rails/activestorage').start()
 require('channels')
 require('jquery');
 require('packs/toastr');
+require("@nathanvda/cocoon");
 import 'bootstrap';
 
 //= require jquery3
@@ -16,3 +17,4 @@ import 'bootstrap';
 //= require popper
 //= require bootstrap
 //= require turbolinks
+//= require cocoon

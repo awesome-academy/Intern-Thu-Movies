@@ -33,6 +33,18 @@
 
   <%= f.label :movie %>
   <%= f.file_field :film, class: "form-control-file" %>
+  <hr>
+
+  <h4><%= t ".add_cast" %></h4>
+  <%= f.fields_for :casts do |cast| %>
+    <%= render "cast_fields", f: cast %>
+    <hr>
+  <% end %>
+
+  <div class="links">
+    <%= link_to_add_association t(".add_cast"), f, :casts, {class: "btn btn-primary"} %>
+  </div>
+
   <br>
   <div class="text-center text-bold">
     <%= link_to t(".cancel"), admin_movies_path, class: "btn btn-secondary" %>
