@@ -7,6 +7,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap", "~> 4.0"
 gem "cancancan"
 gem "carrierwave", "~> 2.0"
+gem "cocoon"
 gem "config"
 gem "devise"
 gem "factory_bot_rails"

@@ -1,4 +1,8 @@
 class Cast < ApplicationRecord
-  has_many :cast_movies, dependent: :destroy
-  has_many :movies, through: :cast_movies
+  CAST_PERMIT = %i(id cast_name birthday birthplace avatar _destroy).freeze
+  belongs_to :movie
+
+  validates :cast_name, :birthday, :birthplace, presence: true
+
+  mount_uploader :avatar, AvatarUploader
 end

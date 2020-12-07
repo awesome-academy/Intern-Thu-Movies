@@ -90,6 +90,9 @@ vi:
       form:
         cancel: "Thoát"
         save: "Lưu"
+        add_cast: "Thêm diễn viên"
+      cast_field:
+        remove: "Xoá"
       movie:
         sure: "Bạn đã chắc chắn?"
       index:

@@ -7,7 +7,7 @@ describe Movie, type: :model do
   let!(:movie_2){FactoryBot.create :movie, title: "Avengers"}
 
   describe "Associations" do
-    [:comments, :favoriate_movies, :cast_movies, :rates].each do |model|
+    [:comments, :favoriate_movies, :rates].each do |model|
       it {is_expected.to have_many(model).dependent(:destroy)}
     end
 
@@ -19,9 +19,6 @@ describe Movie, type: :model do
       is_expected.to have_many(:users).through :favoriate_movies
     end
 
-    it "has many casts" do
-      is_expected.to have_many(:casts).through :cast_movies
-    end
   end
 
   describe "Validates" do

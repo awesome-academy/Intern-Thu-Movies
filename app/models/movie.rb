@@ -1,7 +1,8 @@
 class Movie < ApplicationRecord
   MOVIE_PERMIT = [:title, :image, :trailer, :background, :slug, :film,
                   :overview, :trailer, :release_date,
-                  :runtime, :director, :genre_id].freeze
+                  :runtime, :director, :genre_id,
+                  casts_attributes: Cast::CAST_PERMIT].freeze
   belongs_to :genre
 
   has_many :comments, dependent: :destroy, as: :commentable
@@ -9,8 +10,7 @@ class Movie < ApplicationRecord
   has_many :favoriate_movies, dependent: :destroy
   has_many :users, through: :favoriate_movies
 
-  has_many :cast_movies, dependent: :destroy
-  has_many :casts, through: :cast_movies
+  has_many :casts, dependent: :destroy
 
   has_many :rates, dependent: :destroy
 
@@ -24,6 +24,10 @@ class Movie < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :film, FilmUploader
   mount_uploader :background, BackgroundUploader
+
+  accepts_nested_attributes_for :casts,
+                                reject_if: :all_blank,
+                                allow_destroy: true
 
   delegate :genre_name, to: :genre
 
